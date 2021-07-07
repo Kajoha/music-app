@@ -1,0 +1,26 @@
+// Typografic
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;700&display=swap');
+
+$main-typo: 'Manrope', sans-serif;
+
+// Colors
+
+$white: #FFFF;
+$blue-main: #2A2438;
+$green: #59C170;
+$lila: #7A69E1;
+$red: #ED3B3B;
+
+// Size-Typography
+
+$size: 1rem;
+
+$typo-xs: $size;
+$typo-s: $size * 1.5;
+$typo-m: $size * 2;
+$typo-l: $size * 2.5;
+$typo-x: $size * 3;
+
+// wrapper
+
+$wrapper: $size * 108;
