@@ -1,0 +1,44 @@
+header{
+    margin: 0 auto;
+    margin-top: 5rem;
+    max-width: 90%;
+    padding-bottom: 2rem;
+    width: 100%;
+}
+
+.header__content{
+    display: flex;
+    justify-content: space-between;
+    img{
+        height: 80%;
+    }
+}
+
+
+
+#musicPlayerCanvas{
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
+
+.musicPlayer__controls{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    transition: 5s all;
+}
+
+
+.music__player--title{
+    color: $white;
+    font-size:$typo-x;
+    span{
+        color: $green;
+    }
+}
+
+.wrapper{
+    max-width: $wrapper;
+    margin: 0 auto;
+}
