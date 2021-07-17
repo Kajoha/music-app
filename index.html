@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript 2 Project Template</title>
+  <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__content">
+      <div class="header__content--logo">
+        <img  class=" img__cursor" src="./img/logo.png" alt="Music-Logo">
+      </div>
+      <div class="header__content--user">
+        <img  class=" img__cursor" src="./img/User logo.png" alt="Log-in-image">
+      </div>
+    </div>
+  </header>
+  <div class="wrapper">
+    <div class="music__player">
+      <p class="music__player--title">Playing <span>Music Name</span></p>
+      <div class="music__player--animation">
+        <canvas id="musicPlayerCanvas" width="1080px" height="500px">
+
+        </canvas>
+        <div class="musicPlayer__controls">
+          <audio class="music" src="https://cetav.s3.us-east-2.amazonaws.com/present-tense.mp3" type="audio/mp3"></audio>
+          <img class="img__cursor" src="./img/add-playlist.png" alt="add-playlist-button">
+          <img class=" img__cursor" src="./img/left-arrow.png" alt="previous-song-button">
+          <img class="playButton img__cursor" src="./img/play-button.png" alt="play-button">
+          <img class=" img__cursor" src="./img/right-arrow.png" alt="next-song-button">
+          <img class=" img__cursor" src="./img/hearth.png" alt="favorite-song-buton">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html
