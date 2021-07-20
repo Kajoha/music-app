@@ -34,12 +34,17 @@
   },
   "homepage": "https://github.com/Kajoha/music-app#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-validation": "^3.0.8",
     "mongoose": "^5.13.3",
     "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
     "pug": "^3.0.2"
   }
 }

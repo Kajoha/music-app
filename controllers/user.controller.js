@@ -20,4 +20,14 @@ userController.getUsers = async function (req, res, next) {
   }
 };
 
+userController.logUser = async function (req, res, next) {
+  try {
+    const users = await userService.userLog();
+    return res.status(200).json({ status: 200, data: users, message: 'Successfully user log' });
+  } catch (error) {
+    return res.status(400).json({ status: 400, message: error.message });
+  }
+}
+
+
 module.exports = userController;

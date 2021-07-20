@@ -19,7 +19,7 @@ favouriteService.getFavourite = async function () {
     const favourites = await Favourite.find({ userId }).populate('songs');
     return favourites;
   } catch (error) {
-    throw new Error('Error while Paginating favourites');
+    throw new Error('Error while Paginating favourites');                                   
   }
 };
 

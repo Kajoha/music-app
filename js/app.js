@@ -7,7 +7,6 @@ const recentRouter = require('../routes/recent.route');
 const favouriteRouter = require('../routes/favourite.route');
 const playlistRouter = require('../routes/playlist.route');
 const cors = require('cors');
-
 const app = express();
 require('dotenv').config();
 
@@ -43,3 +42,12 @@ app.use('*', (req, res) => {
 app.listen(PORT, HOSTNAME, () => {
   console.log(`Server running on ${HOSTNAME}:${PORT}`);
 });
+
+
+
+
+
+
+
+
+
