@@ -50,4 +50,5 @@ userService.userLog = async function () {
     throw new Error('Error while getting the User');
   }
 };
+
 module.exports = userService;
