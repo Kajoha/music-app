@@ -11,4 +11,3 @@ const recentSchema = new Schema({
 
 const Recent = mongoose.model('Recent', recentSchema);
 module.exports = Recent;
-

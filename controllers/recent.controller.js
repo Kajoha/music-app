@@ -20,4 +20,13 @@ recentController.getRecent = async function (req, res, next) {
   }
 };
 
+recentController.update = async function (req, res, next) {
+  try {
+    const recent = await recentService.updateRecent(req.body);
+    return res.status(201).json({ recent });
+  } catch (error) {
+    return res.status(400).json({ status: 400, message: error.message });
+  }
+};
+
 module.exports = recentController;
