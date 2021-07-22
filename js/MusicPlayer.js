@@ -8,12 +8,10 @@ let playButton = document.querySelector('.playButton')
 
 function songs(data){
 	music.src = data;
-	music.crossOrigin = "anonymous";
 	music.load();
 }
 
 function start(song){
-	console.log(song)
 	playButton.addEventListener('click', (e) => {
 		if(e.target.classList.contains('active')){
 			playButton.src = '../img/play-button.png';
@@ -42,7 +40,7 @@ fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/auror
 		for(let i = 0; i < data.length; i++){
 			let currentSong = data[i].audio;
 			songs(currentSong);
-			start(currentSong);
+			start(music);
 		}
 	})
 	.catch((error) => {

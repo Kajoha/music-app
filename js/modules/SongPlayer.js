@@ -12,7 +12,7 @@ export default class SongPlayer{
             if(this.musicController < 0){
                 this.musicController = this.data.length - 1;
             }
-            console.log(this.data[this.musicController].audio);
+			this.musicTitle.innerHTML = this.data[this.musicController].name;
         })
     }
     next(){
@@ -21,7 +21,7 @@ export default class SongPlayer{
             if(this.musicController > this.data.length - 1){
                 this.musicController = 0;
             }
-            console.log(this.data[this.musicController].audio);
+			this.musicTitle.innerHTML = this.data[this.musicController].name;
         })
     }
 }

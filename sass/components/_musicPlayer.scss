@@ -13,9 +13,6 @@ header{
 .header__content{
     display: flex;
     justify-content: space-between;
-    img{
-        height: 80%;
-    }
 }
 
 
@@ -36,10 +33,14 @@ header{
 
 .music__player--title{
     color: $white;
-    font-size:$typo-x;
+    font-size:$typo-l;
     span{
         color: $green;
     }
+}
+
+.img__user{
+    height: 45%;
 }
 
 .wrapper{
