@@ -2,6 +2,7 @@
     background-image: url(../../img/stop-button.png);
 }
 
+
 header{
     margin: 0 auto;
     margin-top: 5rem;
@@ -22,12 +23,17 @@ header{
     margin-bottom: 2rem;
 }
 
+
 .musicPlayer__controls{
     align-items: center;
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
     text-align: center;
-    transition: 5s all;
+    button{
+        border: none;
+        background: none;
+    }
 }
 
 
@@ -39,6 +45,73 @@ header{
     }
 }
 
+
+.modal{
+    margin: 0 auto;
+    width: 95%;
+}
+
+
+.music__player--modal{
+    background-color: $lila;
+    border-radius: 2rem;
+    display: none;
+    position: absolute;
+    top: 40rem;
+    transform: translate(50%,-50%);
+    width: 30%;
+    z-index: 1;
+}
+
+.modal__newPlaylist{
+    margin-bottom: 4rem;
+    input{
+        width: 22rem;
+        border-radius: 4rem;
+        border: none;
+    }
+    button{
+        background-color: $green;
+        border-radius: 2rem;
+        border: none;
+        color: white;
+        margin-left: 2rem;
+    }
+}
+
+.modal__title{
+    color: $white;
+    font-size: $typo-x;
+    letter-spacing: .1rem;
+    margin-top: 1rem;
+}
+
+.modal__playlist{
+    background-color: $blue-main;
+    border-radius: 2rem;
+    color: white;
+    font-size: $typo-xs;
+    width: 100%;
+    margin-bottom: 2rem;
+    &:hover{
+        border: 2px solid $white;
+    }
+    p{
+        font-size: $typo-xs;
+        margin: 0;
+        padding: .8rem;
+    }
+}
+
+
+.modal__playlistContent{
+    h2{
+        color: $green;
+        letter-spacing: .1rem;
+        font-size: $typo-s;
+    }
+}
+
 .img__user{
     height: 45%;
 }
@@ -46,4 +119,8 @@ header{
 .wrapper{
     max-width: $wrapper;
     margin: 0 auto;
+}
+
+.visible{
+    display: block;
 }
