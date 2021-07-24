@@ -5,4 +5,69 @@ html {
   font-family: "Manrope", sans-serif; }
 
 body {
-  background: #FFFF; }
+  background: #FFFF;
+  margin: 0;
+  padding: 0; }
+
+button {
+  align-self: flex-end;
+  background-color: #7A69E1;
+  border: none;
+  border-radius: .4rem;
+  color: #FFFF;
+  cursor: pointer;
+  margin-top: 2rem;
+  width: 6rem; }
+  button:hover {
+    background-color: #5548a1; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem; }
+
+h2 {
+  cursor: pointer; }
+
+label {
+  color: #FFFF;
+  font-size: 1rem; }
+
+input {
+  background: none;
+  border: none;
+  border-bottom: 0.2rem solid #59C170;
+  color: #FFFF;
+  flex-direction: column;
+  margin-bottom: 1rem; }
+
+.formBckg {
+  background-color: #2A2438;
+  width: 50rem;
+  margin: 0 auto;
+  margin-top: 6rem; }
+
+.userForm {
+  margin: 0 auto;
+  width: 30rem; }
+
+.userForm__login form {
+  display: none; }
+
+.userOptions {
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
+  margin: 0 auto; }
+
+.userOptionsSignin {
+  color: #FFFF; }
+
+.userOptionsLogin {
+  color: #646363; }
+
+.activeForm {
+  color: #FFFF; }
+
+.unactiveForm {
+  color: #928d8d; }
