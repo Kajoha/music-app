@@ -1,15 +1,16 @@
-/*
 export default class SongPlayer {
   previousButton = document.querySelector('.previousButton');
   nextButton = document.querySelector('.nextButton');
   musicTitle = document.querySelector('.music__player--title span');
-  modal = document.querySelector('.music__player--modal');
+  modal = document.querySelector('.modal');
+  addButton = document.querySelector('.addPlaylist');
   constructor(arrayOfSongs, musicController) {
     this.musicController = musicController; 
     this.data = arrayOfSongs;
   }
 
-  addPlaylist() {
+  addPlaylistModal() {
+    console.log('test')
     this.addButton.addEventListener('click', () => {
       if (!this.modal.classList.contains('visible')) {
         this.modal.classList.add('visible');
@@ -41,4 +42,3 @@ export default class SongPlayer {
     });
   }
 }
-*/

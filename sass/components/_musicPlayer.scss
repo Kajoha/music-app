@@ -45,14 +45,7 @@ header{
     }
 }
 
-
 .modal{
-    margin: 0 auto;
-    width: 95%;
-}
-
-
-.music__player--modal{
     background-color: $lila;
     border-radius: 2rem;
     display: none;
@@ -63,7 +56,12 @@ header{
     z-index: 1;
 }
 
-.modal__newPlaylist{
+.modal__content{
+    margin: 0 auto;
+    width: 95%;
+}
+
+.modal__content--newPlaylist{
     margin-bottom: 4rem;
     input{
         width: 22rem;
@@ -79,14 +77,14 @@ header{
     }
 }
 
-.modal__title{
+.modal__content--title{
     color: $white;
     font-size: $typo-x;
     letter-spacing: .1rem;
     margin-top: 1rem;
 }
 
-.modal__playlist{
+.modal__content--playlist{
     background-color: $blue-main;
     border-radius: 2rem;
     color: white;
@@ -104,7 +102,7 @@ header{
 }
 
 
-.modal__playlistContent{
+.modal__content--playlistContent{
     h2{
         color: $green;
         letter-spacing: .1rem;

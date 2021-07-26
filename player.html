@@ -26,13 +26,13 @@
           <div class="musicPlayer__controls">
             <audio class="music js__listening" src="" type="audio/mp3" crossOrigin = "anonymous"></audio>
             <button class="button__addPlaylist ">
-              <img class="img__cursor" src="./img/add-playlist.png" alt="add-playlist-button">
+              <img class="img__cursor addPlaylist" src="./img/add-playlist.png" alt="add-playlist-button">
             </button>
             <button class="button__previousSong ">
               <img class=" img__cursor previousButton" src="./img/left-arrow.png" alt="previous-song-button">
             </button>
             <button  class="button__playSong">
-              <img class="playButton img__cursor" src="./img/play-button.png" alt="play-button">
+              <img class="img__cursor playButton" src="./img/play-button.png" alt="play-button">
             </button>
             <button class="button__nextSong ">
               <img class=" img__cursor nextButton" src="./img/right-arrow.png" alt="next-song-button">
@@ -42,25 +42,25 @@
             </button>
           </div>
         </div>
-        <div class="music__player--modal">
-          <div class="modal">
-            <h2 class="modal__title">Add to a list</h2>
-            <div class="modal__newPlaylist">
-              <input type="text" name="newPlaylist" placeholder="New Playlist">
-              <button type="submit">Create</button>
-            </div>
-            <div class="modal__playlistContent">
-              <h2>Exisiting Playlists</h2>
-              <div class="modal__playlistsAvailables">
-                <div class="modal__playlist">
-                  <p>Salsa Favorites</p>
-                </div>
-                <div class="modal__playlist">
-                  <p>Bachata Favorites</p>
-                </div>
-                <div class="modal__playlist">
-                  <p>Reggue Favorites</p>
-                </div>
+      </div>
+      <div class="modal">
+        <div class="modal__content">
+          <h2 class="modal__content--title">Add to a list</h2>
+          <div class="modal__content--newPlaylist">
+            <input type="text" name="newPlaylist" placeholder="New Playlist">
+            <button type="submit">Create</button>
+          </div>
+          <div class="modal__content--playlistContent">
+            <h2>Exisiting Playlists</h2>
+            <div class="modal__content--playlistsAvailables">
+              <div class="modal__content--playlist">
+                <p>Salsa Favorites</p>
+              </div>
+              <div class="modal__content--playlist">
+                <p>Bachata Favorites</p>
+              </div>
+              <div class="modal__content--playlist">
+                <p>Reggue Favorites</p>
               </div>
             </div>
           </div>
