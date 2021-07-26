@@ -85,10 +85,72 @@ h1 {
   max-width: 102rem;
   margin: 0 auto; }
 
+.home__top {
+  display: flex;
+  justify-content: space-between; }
+
 .welcome__img {
-  margin: 4rem 0 0 7rem; }
+  margin: 4rem 0 0 4rem; }
 
 .welcome__typo-green {
   color: #59C170;
   font-size: 2.5rem;
   margin: .7rem 0 2rem 0; }
+
+.js--active {
+  color: #FFFF; }
+
+.js--unactive {
+  color: #928d8d; }
+
+.register {
+  margin: 12rem 10rem 0 0;
+  width: 35rem; }
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  width: 35rem; }
+
+.register__form--button {
+  align-self: flex-end;
+  background-color: #7A69E1;
+  border: none;
+  border-radius: .4rem;
+  color: #FFFF;
+  cursor: pointer;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 10rem; }
+  .register__form--button:hover {
+    background-color: #5548a1; }
+
+.register__form--input {
+  background: none;
+  border: none;
+  border-bottom: 0.1rem solid #59C170;
+  color: #FFFF;
+  flex-direction: column;
+  font-size: 1.5rem;
+  margin-bottom: 1rem; }
+
+.register__form--label {
+  color: #FFFF;
+  font-size: 1.5rem;
+  margin-bottom: 1rem; }
+
+.register__login {
+  display: none; }
+
+.register__options {
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem; }
+
+.register__option--login {
+  color: #646363; }
+
+.register__option--signin {
+  color: #FFFF; }
