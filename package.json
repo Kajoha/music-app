@@ -33,13 +33,5 @@
     "url": "https://github.com/Kajoha/music-app/issues"
   },
   "homepage": "https://github.com/Kajoha/music-app#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-validation": "^3.0.8",
-    "mongoose": "^5.13.3",
-    "nodemon": "^2.0.12",
-    "pug": "^3.0.2"
-  }
+  "dependencies": {}
 }
