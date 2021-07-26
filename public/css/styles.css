@@ -1,1 +1,94 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;700&display=swap");html{font-size:10px;font-family:"Manrope",sans-serif;margin:0}body{background:#2A2438}.cursor{cursor:pointer}.musicList{display:inline-block;width:40rem}.musicList__item{border-bottom:0.1rem solid #59C170;display:flex;justify-content:space-between;margin-bottom:1.5rem}.musicList__img{height:5rem;margin-top:.5rem;width:5rem}.musicList__play{background:none;border:none}.musicList__play--img{width:4rem;height:4rem}.musicList__song{font-size:2rem;list-style:none;margin:0;padding:0}.musicList__title{display:flex;font-size:2rem;justify-content:space-between;margin-bottom:3rem}.musicList__title--active{border-bottom:0.3rem solid #59C170;padding-bottom:1.5rem}.header{margin:0 auto;margin-top:5rem;max-width:90%;padding-bottom:2rem;width:100%}.header__content{display:flex;justify-content:space-between}.header__content img{height:80%}#musicPlayerCanvas{border-radius:2rem;margin-bottom:2rem}.musicPlayer__controls{align-items:center;display:flex;justify-content:space-between;text-align:center;transition:5s all}.music__player--title{color:#fff;font-size:3rem}.music__player--title span{color:#59C170}.wrapper{max-width:102rem;margin:0 auto}
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;700&display=swap");
+html {
+  font-size: 10px;
+  font-family: "Manrope", sans-serif; }
+
+body {
+  background: #2A2438;
+  margin: 0; }
+
+h1 {
+  font-size: 4rem;
+  margin: 0; }
+
+.cursor {
+  cursor: pointer; }
+
+.header {
+  margin: 0 auto;
+  margin-top: 3rem;
+  max-width: 92%; }
+
+.header__content {
+  display: flex;
+  justify-content: space-between; }
+  .header__content img {
+    width: 50%; }
+
+.musicList {
+  display: inline-block;
+  width: 40rem; }
+
+.musicList__item {
+  border-bottom: 0.1rem solid #59C170;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem; }
+
+.musicList__img {
+  height: 5rem;
+  margin-top: .5rem;
+  width: 5rem; }
+
+.musicList__play {
+  background: none;
+  border: none; }
+
+.musicList__play--img {
+  width: 4rem;
+  height: 4rem; }
+
+.musicList__song {
+  font-size: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.musicList__title {
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
+  margin-bottom: 3rem; }
+
+.musicList__title--active {
+  border-bottom: 0.3rem solid #59C170;
+  padding-bottom: 1.5rem; }
+
+#musicPlayerCanvas {
+  border-radius: 2rem;
+  margin-bottom: 2rem; }
+
+.musicPlayer__controls {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  transition: 5s all; }
+
+.music__player--title {
+  color: #FFFF;
+  font-size: 4rem; }
+  .music__player--title span {
+    color: #59C170; }
+
+.wrapper {
+  max-width: 102rem;
+  margin: 0 auto; }
+
+.welcome__img {
+  margin: 4rem 0 0 7rem; }
+
+.welcome__typo-green {
+  color: #59C170;
+  font-size: 2.5rem;
+  margin: .7rem 0 2rem 0; }
