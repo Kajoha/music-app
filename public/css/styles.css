@@ -51,7 +51,7 @@ header {
   position: absolute;
   top: 40rem;
   transform: translate(50%, -50%);
-  width: 30%;
+  width: 40rem;
   z-index: 1; }
 
 .modal__content {
@@ -101,7 +101,8 @@ header {
 
 .wrapper {
   max-width: 108rem;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
 
 .visible {
   display: block; }
