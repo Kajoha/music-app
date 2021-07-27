@@ -1,9 +1,44 @@
-.home__top {
+.artists {
+  margin: 5rem 0 2rem 0;
+  width: 50rem;
+}
+
+.artists__home--img {
+  border-radius: 50%;
+  width: 12rem;
+
+}
+
+.artists__home--name {
+  font-size: $typo-m;
+  text-align: center;
+  &:hover {
+    color: $white;
+  }
+}
+
+.artists__home--title {
+ h2 {
+   color: $blue-main;
+   font-size: 3.5rem;
+   z-index: 1000;
+ }
+margin: 8.5rem 7rem 0 0;
+ position: relative;
+}
+
+.home__artist {
+  background-color: $lila;
+  width: 100%;
+}
+
+.home__flex {
   display: flex;
   justify-content: space-between;
 }
 
 .welcome__img {
+  display: block;
   margin: 4rem 0 0 4rem;
 }
 

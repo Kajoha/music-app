@@ -9,12 +9,26 @@ body {
 }
 
 h1 {
+  color: $white;
   font-size: $typo-x;
   margin: 0;
 }
 
 .cursor{
   cursor: pointer;
+}
+
+.bottom {
+  margin-top: 7rem;
+  position: relative;
+}
+
+.bottom__text {
+  color: $white;
+  font-size: $typo-s;
+  padding-bottom: 3rem;
+  position: absolute;
+  right: 7rem;
 }
 
 .header{
