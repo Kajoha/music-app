@@ -29,7 +29,6 @@ function loadArtists(data) {
      <div class="artists__home">
      <img class="artists__home--img" src="${apiData[i].image}" alt="">
      <h3 data-id="${apiData[i].id}" class="artists__home--name cursor"><a href="./artist.html">${apiData[i].name}</a></h3>
-
      </div>
     `;
   }
@@ -45,7 +44,6 @@ function savedLocalStorage() {
   document.addEventListener('click', (event) => {
     const clicElement = ((event.target).parentNode);
     const id = clicElement.getAttribute('data-id');
-    console.log(id);
     localStorage.setItem('click', id);
   });
 }
