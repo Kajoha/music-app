@@ -97,19 +97,23 @@ h1 {
   max-width: 102rem;
   margin: 0 auto; }
 
-.artists {
+.artists__home {
   margin: 5rem 0 2rem 0;
   width: 50rem; }
 
 .artists__home--img {
   border-radius: 50%;
+  margin-left: 2.5rem;
   width: 12rem; }
 
 .artists__home--name {
   font-size: 2rem;
   text-align: center; }
-  .artists__home--name:hover {
-    color: #FFFF; }
+  .artists__home--name a {
+    text-decoration: none;
+    color: #2A2438; }
+    .artists__home--name a:hover {
+      color: #FFFF; }
 
 .artists__home--title {
   margin: 8.5rem 7rem 0 0;
@@ -193,3 +197,19 @@ h1 {
 
 .register__option--signin {
   color: #FFFF; }
+
+.artist {
+  margin: 8rem; }
+
+.artist__img {
+  margin-left: 15rem; }
+  .artist__img img {
+    border-radius: 50%;
+    width: 30rem; }
+
+.artist__content {
+  margin: 5rem 7rem 0 10rem; }
+
+.artist__description {
+  color: #FFFF;
+  font-size: 1.5rem; }

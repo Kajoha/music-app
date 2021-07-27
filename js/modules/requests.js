@@ -1,10 +1,10 @@
+/*
 export default class Requests {
 
   apiArtists = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
   apiRadioHead = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/radiohead';
   apiAurora = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/aurora';
   apiGozillaz = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/gorillaz';
-
 
   artist() {
     fetch(this.apiArtists).then((response) => response.json()).then((data) => {
@@ -36,7 +36,7 @@ export default class Requests {
 };
 
 requests();
-
+*/
 
 /*
 // const apiMusicapp = 'http://localhost:3000';

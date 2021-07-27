@@ -19,19 +19,16 @@ LogIn.addEventListener('click', () => {
   FormSingIn.style.display = 'none';
 });
 
-const apiArtists = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
-const divContent = document.querySelector('.js--artists');
-console.log(divContent);
-
 function loadArtists(data) {
+  const divContent = document.querySelector('.js--artists');
   const apiData = data;
   let artists = '';
 
   for (let i = 0; i < apiData.length; i += 1) {
     artists += `
-     <div class="artists__home" data-id="${apiData[i].id}">
+     <div class="artists__home">
      <img class="artists__home--img" src="${apiData[i].image}" alt="">
-     <h3 class="artists__home--name cursor">${apiData[i].name}</h3>
+     <h3 data-id="${apiData[i].id}" class="artists__home--name cursor"><a href="./artist.html">${apiData[i].name}</a></h3>
 
      </div>
     `;
@@ -39,6 +36,18 @@ function loadArtists(data) {
   divContent.innerHTML = artists;
 }
 
+const apiArtists = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
 fetch(apiArtists).then((response) => response.json()).then((data) => {
   loadArtists(data);
 });
+
+function savedLocalStorage() {
+  document.addEventListener('click', (event) => {
+    const clicElement = ((event.target).parentNode);
+    const id = clicElement.getAttribute('data-id');
+    console.log(id);
+    localStorage.setItem('click', id);
+  });
+}
+
+savedLocalStorage();

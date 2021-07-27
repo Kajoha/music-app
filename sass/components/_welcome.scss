@@ -1,20 +1,24 @@
-.artists {
+.artists__home {
   margin: 5rem 0 2rem 0;
   width: 50rem;
 }
 
 .artists__home--img {
   border-radius: 50%;
+  margin-left: 2.5rem;
   width: 12rem;
-
 }
 
 .artists__home--name {
+  a{
+    text-decoration: none;
+    color: $blue-main;
+    &:hover {
+      color: $white;
+    }
+  }
   font-size: $typo-m;
   text-align: center;
-  &:hover {
-    color: $white;
-  }
 }
 
 .artists__home--title {
