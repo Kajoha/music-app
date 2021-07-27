@@ -1,0 +1,20 @@
+.artist {
+  margin: 8rem;
+}
+
+.artist__img {
+  margin-left: 15rem;
+  img {
+    border-radius: 50%;
+    width: 30rem;
+  }
+}
+
+.artist__content {
+  margin: 5rem 7rem 0 10rem;
+}
+
+.artist__description {
+  color: $white;
+  font-size: $typo-s;
+}

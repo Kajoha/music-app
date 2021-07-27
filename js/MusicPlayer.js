@@ -1,5 +1,4 @@
 import SongPlayer from '../js/modules/SongPlayer.js';
-/*
 const canvas = document.getElementById('musicPlayerCanvas');
 const ctx = canvas.getContext('2d');
 const music = document.querySelector('.music');
@@ -62,7 +61,7 @@ const especificSong = buttonPlayer.addEventListener('click', (data) => {
   music.load();
   start(music);
 });
-*/
+
 const SongsList = new SongPlayer();
 SongsList.addPlaylistModal();
 SongsList.previous();

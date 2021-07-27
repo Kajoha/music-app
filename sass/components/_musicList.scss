@@ -1,0 +1,47 @@
+.musicList {
+  display: inline-block;
+  width: 40rem;
+}
+
+.musicList__item {
+  border-bottom: .1rem solid $green;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.musicList__img {
+  height: 5rem;
+  margin-top: .5rem;
+  width: 5rem;
+}
+
+.musicList__play {
+  background: none;
+  border: none;
+}
+
+.musicList__play--img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.musicList__song {
+  font-size: $typo-m;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.musicList__title {
+  display: flex;
+  font-size: $typo-m;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.musicList__title--active {
+  border-bottom: .3rem solid $green;
+  padding-bottom: 1.5rem;
+}
+

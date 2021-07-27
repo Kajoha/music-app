@@ -7,7 +7,10 @@
     "sass-build": "node-sass sass -o public/css --output-style compressed",
     "dev-server": "live-server --watch=\"index.html,sass,js\"",
     "eslint": "eslint js",
-    "dev": "npm run sass-build && concurrently \"npm run sass\" \"npm run dev-server\" \"esw -w js\""
+    "dev": "npm run sass-build && concurrently \"npm run sass\" \"npm run dev-server\" \"esw -w js\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start:dev": "nodemon js/app.js"
   },
   "license": "MIT",
   "devDependencies": {
@@ -29,5 +32,6 @@
   "bugs": {
     "url": "https://github.com/Kajoha/music-app/issues"
   },
-  "homepage": "https://github.com/Kajoha/music-app#readme"
+  "homepage": "https://github.com/Kajoha/music-app#readme",
+  "dependencies": {}
 }
