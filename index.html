@@ -13,10 +13,7 @@
   <header class="header">
     <div class="header__content">
       <div class="header__content--logo">
-        <img class=" img__cursor" src="./img/logo.png" alt="Music-Logo">
-      </div>
-      <div class="header__content--user">
-        <img class=" img__cursor" src="./img/User logo.png" alt="Log-in-image">
+        <a href="index.html"><img class="cursor" src="./img/logo.png" alt="Music-Logo"></a>
       </div>
     </div>
   </header>
@@ -38,23 +35,27 @@
         </div>
       </div>
       <div class="register__signin js--signin">
-        <form class="register__form" action="">
+        <p class="register__form--incompleteInfo">Please fill the field that you left empty</p>
+        <form class="register__form">
           <label class="register__form--label" for="Name">Your Name</label>
           <input class="register__form--input" type="text" name="Name">
           <label class="register__form--label" for="Email">Your Email</label>
-          <input class="register__form--input" type="text" name="Email">
+          <input class="register__form--input" type="email" name="Email">
           <label class="register__form--label" for="Password">Password</label>
           <input class="register__form--input" type="password" name="Password">
-          <button class="register__form--button" type="submit">Sign In</button>
+          <label class="register__form--label" for="Re-enterPassword">Re-enter Password</label>
+          <input class="register__form--input" type="password" name="Re-enterPassword">
+          <p class="register__form--paragraph">The password doesnt match</p>
+          <button class="register__form--button js--singinButton" type="submit">Sign In</button>
         </form>
       </div>
       <div class="register__login js--login">
-        <form class="register__form" action="">
+        <form class="register__form">
           <label class="register__form--label" for="Email">Your Email</label>
-          <input class="register__form--input" type="text" name="Email">
+          <input class="register__form--input" type="email" name="Email">
           <label class="register__form--label" for="Password">Password</label>
-          <input class="register__form--input" type="text" name="Password">
-          <button class="register__form--button" type="submit">Log In</button>
+          <input class="register__form--input" type="password" name="Password">
+          <button class="register__form--button js--loginButton" type="submit">Log In</button>
         </form>
       </div>
     </div>
@@ -76,4 +77,3 @@
 </body>
 
 </html>
-<a href=""></a>
