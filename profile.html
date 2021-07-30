@@ -10,20 +10,34 @@
 </head>
 
 <body>
-  <div class="wrapper">
 
+  <header class="header">
+    <div class="header__content">
+      <div class="header__content--logo">
+        <a href="index.html"><img class="cursor" src="./img/logo.png" alt="Music-Logo"></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrapper">
     <div class="musicList">
       <div class="musicList__title">
-        <h3 class="musicList__title--active cursor js-playlists" data-filter="recently">Recently Played</h3>
-        <h3 class="cursor js-playlists" data-filter="favorites">Your favorites</h3>
+        <h3 class="musicList__title--active cursor js--musicList" data-filter="recently">Recently Played</h3>
+        <h3 class="cursor js--musicList" data-filter="favorites">Your favorites</h3>
       </div>
-      <div class="js-musicList">
+      <div>
         <ul class="musicList__song js--playlist">
 
         </ul>
       </div>
     </div>
 
+  </div>
+
+  <div class="bottom">
+    <p class="bottom__text">
+      Copyright © Ignacio & Karen
+    </p>
   </div>
   <script src="js/profile.js" type="module"></script>
 </body>

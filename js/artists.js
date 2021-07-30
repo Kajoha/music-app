@@ -1,5 +1,5 @@
+import Musiclist from './modules/musiclist.js';
 const nameArtist = localStorage.getItem('click');
-// const urlApi = `https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/${nameArtist}`;
 const apiArtists = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
 
 function dataArtist(artist) {
@@ -23,8 +23,5 @@ fetch(apiArtists).then((response) => response.json()).then((data) => {
   });
 });
 
-/*
-fetch(urlApi).then((response) => response.json()).then((data) => {
-  console.log(data);
-});
-*/
+const musicArtist = new Musiclist();
+musicArtist.getArtist(nameArtist);

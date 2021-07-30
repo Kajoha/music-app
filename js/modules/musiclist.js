@@ -4,7 +4,6 @@ export default class Musiclist {
   songs = [];
 
   constructor() {
-    this.getRecent()
   }
 
   getRecent() {
@@ -25,6 +24,14 @@ export default class Musiclist {
     })
   }
 
-  getArtist(idArtist) { }
+  getArtist(idArtist) {
+
+    fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/${idArtist}`).then((response) => response.json()).then((data) => {
+      const artist = data;
+      artist.forEach(song => {
+        new BuilderSong(song).createSong(false);
+      });
+    });
+  }
 
 }

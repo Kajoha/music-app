@@ -18,3 +18,12 @@
   color: $white;
   font-size: $typo-s;
 }
+
+.artist__songs {
+  position: relative;
+}
+
+.artist__songs--list {
+  position: absolute;
+  right: 12rem;
+}
