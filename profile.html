@@ -14,22 +14,14 @@
 
     <div class="musicList">
       <div class="musicList__title">
-        <h3 id="recently" class="musicList__title--active cursor">Recently Played</h3>
-        <h3 id="favorites" class="cursor">Your favorites</h3>
+        <h3 class="musicList__title--active cursor js-playlists" data-filter="recently">Recently Played</h3>
+        <h3 class="cursor js-playlists" data-filter="favorites">Your favorites</h3>
       </div>
-      <div class="js-musicList"></div>
-      <ul class="musicList__song">
-        <li class="musicList__item">
-          <img class="musicList__img" src="./img/inrainbows.jpeg" alt="">
-          <p>This is a example</p>
-          <button class="musicList__play"><img class="musicList__play--img" src="./img/play-button.png" alt=""></button>
-        </li>
-        <li class="musicList__item">
-          <img class="musicList__img" src="./img/inrainbows.jpeg" alt="">
-          <p>This is a example</p>
-          <button class="musicList__play"><img class="musicList__play--img" src="./img/play-button.png" alt=""></button>
-        </li>
-      </ul>
+      <div class="js-musicList">
+        <ul class="musicList__song js--playlist">
+
+        </ul>
+      </div>
     </div>
 
   </div>

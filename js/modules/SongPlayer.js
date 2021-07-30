@@ -4,8 +4,9 @@ export default class SongPlayer {
   musicTitle = document.querySelector('.music__player--title span');
   modal = document.querySelector('.modal');
   addButton = document.querySelector('.addPlaylist');
+
   constructor(arrayOfSongs, musicController) {
-    this.musicController = musicController; 
+    this.musicController = musicController;
     this.data = arrayOfSongs;
   }
 
