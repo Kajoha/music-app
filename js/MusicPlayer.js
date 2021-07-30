@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*let canvas = document.getElementById("musicPlayerCanvas");
 let ctx = canvas.getContext("2d");
 let width = canvas.width;
@@ -8,28 +9,32 @@ const nextButton = document.querySelector('.nextButton')
 let music = document.querySelector('.music');
 let musicTitle = document.querySelector('.music__player--title span');
 let musicController = 0;
+=======
+import SongPlayer from '../js/modules/SongPlayer.js';
+const canvas = document.getElementById('musicPlayerCanvas');
+const ctx = canvas.getContext('2d');
+const music = document.querySelector('.music');
+const buttonPlayer = document.querySelectorAll('.js__listening');
+const width = canvas.width;
+const height = canvas.height;
+const playButton = document.querySelector('.playButton');
+let musicController = '';
+>>>>>>> be39c3b772ff9da4d2132ed4a3895fb1598a1e00
 
-const MusicApi = () => {
-	fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/aurora', {
-		method: "GET"
-	})
-		.then((response) => {
-		if (!response.ok) {
-			throw new Error("Network response was not ok " + response.status);
-		}
-	
-		return response.json();
-		})
-		.then((data) => {
-			song(data[musicController].audio)
-			previousSong(data);
-			nextSong(data);
-		})
-		.catch((error) => {
-		console.log("error", error);
-		});
-};
+function songCreation(audio) {
+  const context = new AudioContext(); 
+  const src = context.createMediaElementSource(audio);
+  const analyser = context.createAnalyser(); 
+  analyser.connect(context.destination);  
+  analyser.fftSize = 512; 
+  src.connect(analyser);
+  const dataArray = new Uint8Array(analyser.frequencyBinCount); 
+  const bufferLength = analyser.frequencyBinCount; 
+  const barWidth = (width / bufferLength) * 1.5;
+  let barHeight;
+  let x = 0;
 
+<<<<<<< HEAD
 MusicApi()
 
 /*
@@ -82,33 +87,54 @@ function previousSong(data){
 		console.log('next',data[musicController].audio)
 		song(data[musicController].audio);
 	})
+=======
+  function songAnimation() {
+    x = 0;
+    analyser.getByteFrequencyData(dataArray);
+    ctx.fillStyle = '#2A2438';
+    ctx.fillRect(0, 0, width, height);
+    for (let i = 0; i < bufferLength; i++) {
+      barHeight = dataArray[i] + 150;
+      const r = barHeight / 1.8 + ((i / bufferLength)) - 15;
+      const g = 110 * (i / bufferLength);
+      const b = 120 + i;
+      ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+      ctx.fillRect(x, height - barHeight, barWidth, barHeight);
+      x += barWidth + 1;
+    }
+    requestAnimationFrame(songAnimation);
+  }
+  songAnimation();
+>>>>>>> be39c3b772ff9da4d2132ed4a3895fb1598a1e00
 }
 
-
-function PlaySong(song){
-	playButton.addEventListener('click', (e) => {
-		songCreation(song)
-		if(e.target.classList.contains('active')){
-				playButton.src = '../img/play-button.png';
-				song.pause();
-		}else{
-				playButton.src = '../img/stop-button.png';
-				song.play();
-		}
-		e.target.classList.toggle('active');
-	})
+function start(song) {
+  playButton.addEventListener('click', (e) => {
+    songCreation(song);
+    if (e.target.classList.contains('active')) {
+      playButton.src = '../img/play-button.png';
+      song.pause();
+    } else {
+      playButton.src = '../img/stop-button.png';
+      song.play();
+    }
+    e.target.classList.toggle('active');
+  });
 }
 
-function nextSong(data){
-	nextButton.addEventListener('click',() =>{
-		playButton.src = '../img/play-button.png';
-		musicController++;
-		if(musicController > data.length - 1){
-			musicController = 0;
-		}
-		console.log('next',data[musicController].audio)
-		song(data[musicController].audio);
-	})
-}
+const especificSong = buttonPlayer.addEventListener('click', (data) => {
+	musicController = data.songid;
+  const musicName = data.name;
+  music.src = data.audio;
+  music.load();
+  start(music);
+});
 
+<<<<<<< HEAD
 */
+=======
+const SongsList = new SongPlayer();
+SongsList.addPlaylistModal();
+SongsList.previous();
+SongsList.next();
+>>>>>>> be39c3b772ff9da4d2132ed4a3895fb1598a1e00

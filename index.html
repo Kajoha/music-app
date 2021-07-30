@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Javascript 2 Project Template</title>
   <link rel="stylesheet" href="public/css/styles.css">
+  <title>Kaju</title>
 </head>
 
 <body>
@@ -20,9 +21,59 @@
     </div>
   </header>
 
+  <div class="wrapper home__flex">
+    <div class="welcome">
+      <h1>KaJu Music</h1>
+      <p class="welcome__typo-green">Enjoy music, enjoy life ... </p>
+      <img class="welcome__img" src="img/img-home.png" alt="">
+    </div>
 
-
-  <script src="js/index.js"></script>
+    <div class="register">
+      <div class="register__options">
+        <div class="register__option--signin js__select--signin">
+          <h2 class="cursor">Sign in</h2>
+        </div>
+        <div class="register__option--login js__select--login">
+          <h2 class="cursor">Log in</h2>
+        </div>
+      </div>
+      <div class="register__signin js--signin">
+        <form class="register__form" action="">
+          <label class="register__form--label" for="Name">Your Name</label>
+          <input class="register__form--input" type="text" name="Name">
+          <label class="register__form--label" for="Email">Your Email</label>
+          <input class="register__form--input" type="text" name="Email">
+          <label class="register__form--label" for="Password">Password</label>
+          <input class="register__form--input" type="password" name="Password">
+          <button class="register__form--button" type="submit">Sign In</button>
+        </form>
+      </div>
+      <div class="register__login js--login">
+        <form class="register__form" action="">
+          <label class="register__form--label" for="Email">Your Email</label>
+          <input class="register__form--input" type="text" name="Email">
+          <label class="register__form--label" for="Password">Password</label>
+          <input class="register__form--input" type="text" name="Password">
+          <button class="register__form--button" type="submit">Log In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="home__artist">
+    <div class="wrapper home__flex">
+      <div class="artists__home home__flex js--artists"></div>
+      <div class="artists__home--title">
+        <h2>Your favorite artists</h2>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <p class="bottom__text">
+      Copyright © Ignacio & Karen
+    </p>
+  </div>
+  <script type="module" src="js/home.js"></script>
 </body>
 
 </html>
+<a href=""></a>
