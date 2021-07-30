@@ -2,6 +2,10 @@ const SingIn = document.querySelector('.js__select--signin');
 const LogIn = document.querySelector('.js__select--login');
 const FormSingIn = document.querySelector('.js--signin');
 const FormLogIn = document.querySelector('.js--login');
+const RegisterForm = document.querySelector('.register__form');
+const passwordValidator = document.querySelector('.register__form--paragraph');
+const SignInForm = document.querySelector('.js--signin form');
+const LoginForm = document.querySelector('.js--login form');
 
 SingIn.addEventListener('click', () => {
   LogIn.classList.remove('js--active');
@@ -18,6 +22,56 @@ LogIn.addEventListener('click', () => {
   FormLogIn.style.display = 'flex';
   FormSingIn.style.display = 'none';
 });
+
+RegisterForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (RegisterForm.elements[2].value === RegisterForm.elements[3].value) {
+    passwordValidator.style.display = 'none';
+  } else {
+    passwordValidator.style.display = 'block';
+  }
+});
+
+SignInForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const fieldsValidator = document.querySelector('.register__form--incompleteInfo');
+  fieldsValidator.style.display = 'none';
+  if(SignInForm.elements[0].value === '' || SignInForm.elements[1].value === '' 
+  || SignInForm.elements[2].value === ''  || SignInForm.elements[3].value === '' ){
+    fieldsValidator.style.display = 'block';
+  }else{
+    const inputs = {
+      'name': `${SignInForm.elements[0].value}`,
+      'email': `${SignInForm.elements[1].value}`,
+      'password': `${SignInForm.elements[2].value}`
+    }
+    SignInForm.elements[0].value = '';
+    SignInForm.elements[1].value = '';
+    SignInForm.elements[2].value = '';
+    SignInForm.elements[3].value = '';
+    addPerson(inputs);
+  }
+})
+
+function addPerson(inputs){
+  fetch('http://localhost:3000/user', {
+    method: "POST",
+    body: JSON.stringify(inputs),
+    headers: {
+      "Content-Type": "application/json"
+    },
+  })
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data)
+  })
+  .catch((error) => {
+  console.error('Error:', error);
+});
+}
+
 
 function loadArtists(data) {
   const divContent = document.querySelector('.js--artists');
@@ -49,4 +103,3 @@ function savedLocalStorage() {
 }
 
 savedLocalStorage();
-
