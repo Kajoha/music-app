@@ -11,7 +11,7 @@ function dataArtist(artist) {
     </div>
     <div class="artist__content">
       <h1>${artist.name}</h1>
-       <p class="artist__description">${artist.description}</p>
+        <p class="artist__description">${artist.description}</p>
     </div>`;
   divArtist.innerHTML = paintArtist;
 }
