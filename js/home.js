@@ -54,7 +54,7 @@ SignInForm.addEventListener('submit',(e)=>{
 })
 
 function addPerson(inputs){
-  fetch('http://localhost:3000/user', {
+  fetch('https://kaju-music.herokuapp.com/user', {
     method: "POST",
     body: JSON.stringify(inputs),
     headers: {
