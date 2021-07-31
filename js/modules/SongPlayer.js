@@ -11,7 +11,6 @@ export default class SongPlayer {
   }
 
   addPlaylistModal() {
-    console.log('test')
     this.addButton.addEventListener('click', () => {
       if (!this.modal.classList.contains('visible')) {
         this.modal.classList.add('visible');

@@ -60,6 +60,11 @@
   margin-bottom: 2rem;
 }
 
+.register__alert{
+  color: $red;
+  font-size: $typo-s;
+}
+
 .register__option--login{
   color: rgb(100, 99, 99);
 }
@@ -75,3 +80,4 @@
 .js--unactive{
   color: #928d8d;
 }
+
