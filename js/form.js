@@ -26,7 +26,7 @@ function addPerson(inputs) {
         method: "POST",
         body: JSON.stringify(inputs),
         headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json'
         },
     })
         .then((response) => {

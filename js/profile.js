@@ -1,5 +1,47 @@
 import Musiclist from './modules/musiclist.js';
 
+const editName = document.querySelector('.js--editName');
+const UserName = document.querySelector('.account__userName--name');
+
+function changeNameDataBase(Username) {
+  fetch('http://localhost:3000/user/name/6105b1566df8f20f5c99a4c1', {
+    method: 'PUT',
+    body: JSON.stringify(Username),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data)
+      UserName.innerHTML = data.data.name;
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+}
+
+function saveName(name) {
+  window.addEventListener('keydown', (event) => {
+    name.style.borderBottom = 'none';
+    if (event.keyCode === 13) {
+      name.setAttribute('contenteditable', 'false');
+      const currentUserName = {
+        "name": `${name.innerHTML}`,
+      };
+      changeNameDataBase(currentUserName);
+    }
+  });
+}
+
+editName.addEventListener('click', () => {
+  UserName.setAttribute('contenteditable', 'true');
+  UserName.style.borderBottom = '1px solid white';
+  saveName(UserName);
+});
+
 const musiclist = new Musiclist();
 window.onload = function () {
   const filters = document.getElementsByClassName('js-playlists');

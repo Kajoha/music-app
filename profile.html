@@ -10,8 +10,28 @@
 </head>
 
 <body>
+  <header class="header">
+    <div class="header__content">
+      <div class="header__content--logo">
+        <img  class=" img__cursor" src="./img/logo.png" alt="Music-Logo">
+      </div>
+      <div class="header__content--user">
+        <img  class=" img__cursor" src="./img/User logo.png" alt="Log-in-image">
+      </div>
+    </div>
+  </header>
   <div class="wrapper">
-
+    <div class="account">
+      <h1 class="account__information">Account information</h1>
+      <div class="account__userName">
+        <div>
+          <p class="account__userName--name">UserName</p>
+        </div>
+        <div>
+          <button class="account__userName--editName cursor js--editName">Edit</button>
+        </div>
+      </div>
+    </div>
     <div class="musicList">
       <div class="musicList__title">
         <h3 class="musicList__title--active cursor js-playlists" data-filter="recently">Recently Played</h3>
@@ -23,7 +43,6 @@
         </ul>
       </div>
     </div>
-
   </div>
   <script src="js/profile.js" type="module"></script>
 </body>
