@@ -1,4 +1,5 @@
-import { loggedPerson, addPerson } from "./form.js";
+import { loggedPerson, addPerson } from "./modules/form.js";
+import LoadArtists from './modules/artists.js';
 
 const SingIn = document.querySelector('.js__select--signin');
 const LogIn = document.querySelector('.js__select--login');
@@ -53,7 +54,7 @@ SignInForm.addEventListener('submit', (e) => {
     SignInForm.elements[3].value = '';
     addPerson(inputs);
   }
-})
+});
 
 LoginForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -66,25 +67,10 @@ LoginForm.addEventListener('submit', (e) => {
     loggedPerson(inputs);
 });
 
-function loadArtists(data) {
-  const divContent = document.querySelector('.js--artists');
-  const apiData = data;
-  let artists = '';
-
-  for (let i = 0; i < apiData.length; i += 1) {
-    artists += `
-    <div class="artists__home">
-    <img class="artists__home--img" src="${apiData[i].image}" alt="">
-    <h3 data-id="${apiData[i].id}" class="artists__home--name cursor"><a href="./artist.html">${apiData[i].name}</a></h3>
-    </div>
-    `;
-  }
-  divContent.innerHTML = artists;
-}
-
 const apiArtists = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
 fetch(apiArtists).then((response) => response.json()).then((data) => {
-  loadArtists(data);
+  const loard = new LoadArtists(data);
+  loard.addArtists();
 });
 
 function savedLocalStorage() {
@@ -96,5 +82,3 @@ function savedLocalStorage() {
 }
 
 savedLocalStorage();
-
-export {loadArtists};

@@ -6,7 +6,6 @@ function statusLogIn(data){
     }else if (data.Userdata === false){
         statusofLogIn.innerHTML = 'The password is not correct';
     }else{
-        // All the info of the user
         console.log(data);
     }
 }
@@ -17,7 +16,7 @@ function statusSignIn(data) {
     if (data.newUser === true) {
         statusofEmail.innerHTML = 'The email is actually linked to a user';
     } else {
-        //All the info of the user
+        
     }
 }
 

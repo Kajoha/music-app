@@ -43,8 +43,10 @@ editName.addEventListener('click', () => {
 });
 
 const musiclist = new Musiclist();
+musiclist.getRecent();
+
 window.onload = function () {
-  const filters = document.getElementsByClassName('js-playlists');
+  const filters = document.getElementsByClassName('js--musicList');
 
   Array.from(filters).forEach((element) => {
     element.addEventListener('click', (e) => {

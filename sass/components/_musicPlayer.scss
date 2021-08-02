@@ -11,13 +11,10 @@
     justify-content: space-between;
 }
 
-
-
 #musicPlayerCanvas{
     border-radius: 2rem;
     margin-bottom: 2rem;
 }
-
 
 .musicPlayer__controls{
     align-items: center;
@@ -30,7 +27,6 @@
         background: none;
     }
 }
-
 
 .music__player--title{
     color: $white;
@@ -100,7 +96,6 @@
         padding: .8rem;
     }
 }
-
 
 .modal__content--playlistContent{
     h2{
