@@ -24,22 +24,26 @@ function changeNameDataBase(Username) {
 }
 
 function saveName(name) {
-  window.addEventListener('keydown', (event) => {
-    name.style.borderBottom = 'none';
-    if (event.keyCode === 13) {
-      name.setAttribute('contenteditable', 'false');
-      const currentUserName = {
-        "name": `${name.innerHTML}`,
-      };
-      changeNameDataBase(currentUserName);
-    }
-  });
+  name.style.borderBottom = 'none';
+  name.setAttribute('contenteditable', 'false');
+  const currentUserName = {
+    "name": `${name.innerHTML}`,
+  };
+  changeNameDataBase(currentUserName);
 }
 
 editName.addEventListener('click', () => {
-  UserName.setAttribute('contenteditable', 'true');
-  UserName.style.borderBottom = '1px solid white';
-  saveName(UserName);
+  if(!editName.classList.contains('save')){
+    editName.innerHTML = 'Save name';
+    UserName.setAttribute('contenteditable', 'true');
+    UserName.style.borderBottom = '1px solid white';
+  }
+  else{
+    UserName.style.borderBottom = 'none';
+    editName.innerHTML = 'Edit';
+    saveName(UserName);
+  }
+  editName.classList.toggle('save');
 });
 
 const musiclist = new Musiclist();
