@@ -1,5 +1,47 @@
 .artist {
-  margin: 8rem;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+}
+
+.artist__content {
+  margin: 5rem 7rem 0 10rem;
+}
+
+.artist__description {
+  font-size: $typo-s;
+}
+
+.artists__home {
+  margin: 3rem 0 2rem 0;
+  width: 50rem;
+}
+
+.artists__home--img {
+  border-radius: 50%;
+  margin-left: 2.5rem;
+  width: 12rem;
+}
+
+.artists__home--name {
+  a{
+    text-decoration: none;
+    color: $blue-main;
+    &:hover {
+      color: $white;
+    }
+  }
+  font-size: $typo-m;
+  text-align: center;
+}
+
+.artists__home--title {
+ h2 {
+   color: $blue-main;
+   font-size: 3.5rem;
+   z-index: 1000;
+ }
+margin: 8.5rem 7rem 0 0;
+ position: relative;
 }
 
 .artist__img {
@@ -10,13 +52,15 @@
   }
 }
 
-.artist__content {
-  margin: 5rem 7rem 0 10rem;
-}
-
-.artist__description {
-  color: $white;
-  font-size: $typo-s;
+.artists__inArtist {
+  a{
+    text-decoration: none;
+    &:hover {
+      color: $green;
+    }
+  }
+  font-size: $typo-m;
+  text-align: center;
 }
 
 .artist__songs {
@@ -25,5 +69,6 @@
 
 .artist__songs--list {
   position: absolute;
-  right: 12rem;
+  right: 7.5rem;
 }
+

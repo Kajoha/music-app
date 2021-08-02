@@ -17,11 +17,18 @@
   width: 5rem;
 }
 
-.musicList__play {
+.musicList__items {
   background: none;
   border: none;
   bottom: 1rem;
   position: absolute;
+}
+
+.musicList__items--like {
+  right: 3rem;
+}
+
+.musicList__items--play {
   right: 8rem;
 }
 
@@ -38,7 +45,6 @@
 }
 
 .musicList__text {
-  color: $white;
   font-size: $typo-s;
   margin-top: 1rem;
   left: 8rem;

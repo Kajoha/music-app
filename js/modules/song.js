@@ -15,9 +15,9 @@ export default class BuilderSong {
       <img class="musicList__img" src="${this.image}" alt="">
       <p class="musicList__text">${this.name}</p>
       <spam class="musicList__text musicList__text--album">Album: ${this.album}</spam>
-      <button class="musicList__play js--play cursor"><img class="musicList__play--img" data-audio = "${this.audio}" src="./img/play-button.png" alt=""></button>
-      <button class="musicList__play js--play cursor">like</button>
-      ${isPlaylist ? `<button class="musicList__play cursor js--play">delete</button>` : ""}
+      <button class="musicList__items--play musicList__items js--play cursor"><img class="musicList__play--img" data-audio = "${this.audio}" src="./img/play-button.png" alt=""></button>
+      <button class="musicList__items--like musicList__items js--play cursor"><img src="./img/hearth.png" alt=""></button>
+      ${isPlaylist ? '<button class="musicList__play cursor js--play">delete</button>' : ''}
       </li>
       `;
     divPlaylist.innerHTML += paintPlaylist;

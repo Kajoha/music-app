@@ -1,3 +1,5 @@
+import LoadArtists from './modules/artists.js';
+
 const SingIn = document.querySelector('.js__select--signin');
 const LogIn = document.querySelector('.js__select--login');
 const FormSingIn = document.querySelector('.js--signin');
@@ -32,14 +34,14 @@ RegisterForm.addEventListener('submit', (e) => {
   }
 });
 
-SignInForm.addEventListener('submit',(e)=>{
+SignInForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const fieldsValidator = document.querySelector('.register__form--incompleteInfo');
   fieldsValidator.style.display = 'none';
-  if(SignInForm.elements[0].value === '' || SignInForm.elements[1].value === '' 
-  || SignInForm.elements[2].value === ''  || SignInForm.elements[3].value === '' ){
+  if (SignInForm.elements[0].value === '' || SignInForm.elements[1].value === ''
+    || SignInForm.elements[2].value === '' || SignInForm.elements[3].value === '') {
     fieldsValidator.style.display = 'block';
-  }else{
+  } else {
     const inputs = {
       'name': `${SignInForm.elements[0].value}`,
       'email': `${SignInForm.elements[1].value}`,
@@ -51,47 +53,29 @@ SignInForm.addEventListener('submit',(e)=>{
     SignInForm.elements[3].value = '';
     addPerson(inputs);
   }
-})
+});
 
-function addPerson(inputs){
-  fetch('http://localhost:3000/user', {
+function addPerson(inputs) {
+  fetch('https://kaju-music.herokuapp.com/user', {
     method: "POST",
     body: JSON.stringify(inputs),
     headers: {
       "Content-Type": "application/json"
     },
   })
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data)
-  })
-  .catch((error) => {
-  console.error('Error:', error);
-});
-}
-
-
-function loadArtists(data) {
-  const divContent = document.querySelector('.js--artists');
-  const apiData = data;
-  let artists = '';
-
-  for (let i = 0; i < apiData.length; i += 1) {
-    artists += `
-    <div class="artists__home">
-    <img class="artists__home--img" src="${apiData[i].image}" alt="">
-    <h3 data-id="${apiData[i].id}" class="artists__home--name cursor"><a href="./artist.html">${apiData[i].name}</a></h3>
-    </div>
-    `;
-  }
-  divContent.innerHTML = artists;
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 }
 
 const apiArtists = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
 fetch(apiArtists).then((response) => response.json()).then((data) => {
-  loadArtists(data);
+  const loard = new LoadArtists(data);
+  loard.addArtists();
 });
 
 function savedLocalStorage() {

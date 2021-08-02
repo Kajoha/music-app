@@ -1,13 +1,5 @@
-.js--active{
-  color: $white;
-}
-
-.js--unactive{
-  color: #928d8d;
-}
-
 .register{
-  margin: 12rem 10rem 0 0;
+  margin: 8rem 10rem 0 0;
   width: 35rem;
 }
 
@@ -49,6 +41,14 @@
   margin-bottom: 1rem;
 }
 
+.register__form--paragraph ,.register__form--incompleteInfo{
+  color: $red;
+  display: none;
+  font-size: $typo-s;
+  font-weight: bolder;
+}
+
+
 .register__login{
   display: none;
 }
@@ -68,3 +68,10 @@
   color: $white;
 }
 
+.js--active{
+  color: $white;
+}
+
+.js--unactive{
+  color: #928d8d;
+}

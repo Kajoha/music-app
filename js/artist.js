@@ -1,10 +1,12 @@
+import LoadArtists from './modules/artists.js';
 import Musiclist from './modules/musiclist.js';
+
 const nameArtist = localStorage.getItem('click');
 const apiArtists = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
 
 function dataArtist(artist) {
   let paintArtist = '';
-  const divArtist = document.querySelector('.js--divArtist');
+  const divArtist = document.querySelector('.js--artist');
   paintArtist = `
     <div class="artist__img">
       <img src="${artist.image}" alt="">
@@ -21,6 +23,9 @@ fetch(apiArtists).then((response) => response.json()).then((data) => {
   artist.forEach((element) => {
     dataArtist(element);
   });
+  const artists = data.filter((data) => data.id !== nameArtist);
+  const loard = new LoadArtists(artists);
+  loard.addArtists();
 });
 
 const musicArtist = new Musiclist();

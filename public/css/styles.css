@@ -1,11 +1,13 @@
-<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;700&display=swap");
 html {
+  background-image: url("../../img/rock.svg");
+  background-repeat: none;
+  background-size: cover;
   font-size: 10px;
   font-family: "Manrope", sans-serif; }
 
 body {
-  background: #2A2438;
+  color: #FFFF;
   margin: 0; }
 
 h1 {
@@ -36,7 +38,7 @@ h1 {
   display: flex;
   justify-content: space-between; }
   .header__content img {
-    width: 75%; }
+    width: 100%; }
 
 .musicList {
   display: inline-block;
@@ -54,11 +56,16 @@ h1 {
   margin: .5rem 0 .5rem 0;
   width: 5rem; }
 
-.musicList__play {
+.musicList__items {
   background: none;
   border: none;
   bottom: 1rem;
-  position: absolute;
+  position: absolute; }
+
+.musicList__items--like {
+  right: 3rem; }
+
+.musicList__items--play {
   right: 8rem; }
 
 .musicList__play--img {
@@ -72,7 +79,6 @@ h1 {
   padding: 0; }
 
 .musicList__text {
-  color: #FFFF;
   font-size: 1.5rem;
   margin-top: 1rem;
   left: 8rem;
@@ -193,32 +199,6 @@ h1 {
 .visible {
   display: block; }
 
-.artists__home {
-  margin: 3rem 0 2rem 0;
-  width: 50rem; }
-
-.artists__home--img {
-  border-radius: 50%;
-  margin-left: 2.5rem;
-  width: 12rem; }
-
-.artists__home--name {
-  font-size: 2rem;
-  text-align: center; }
-  .artists__home--name a {
-    text-decoration: none;
-    color: #2A2438; }
-    .artists__home--name a:hover {
-      color: #FFFF; }
-
-.artists__home--title {
-  margin: 8.5rem 7rem 0 0;
-  position: relative; }
-  .artists__home--title h2 {
-    color: #2A2438;
-    font-size: 3.5rem;
-    z-index: 1000; }
-
 .home__artist {
   background-color: #7A69E1;
   width: 100%; }
@@ -236,14 +216,8 @@ h1 {
   font-size: 2.5rem;
   margin: .7rem 0 2rem 0; }
 
-.js--active {
-  color: #FFFF; }
-
-.js--unactive {
-  color: #928d8d; }
-
 .register {
-  margin: 12rem 10rem 0 0;
+  margin: 8rem 10rem 0 0;
   width: 35rem; }
 
 .register__form {
@@ -279,6 +253,12 @@ h1 {
   font-size: 1.5rem;
   margin-bottom: 1rem; }
 
+.register__form--paragraph, .register__form--incompleteInfo {
+  color: #ED3B3B;
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bolder; }
+
 .register__login {
   display: none; }
 
@@ -294,8 +274,47 @@ h1 {
 .register__option--signin {
   color: #FFFF; }
 
+.js--active {
+  color: #FFFF; }
+
+.js--unactive {
+  color: #928d8d; }
+
 .artist {
-  margin: 8rem; }
+  margin-top: 8rem;
+  margin-bottom: 2rem; }
+
+.artist__content {
+  margin: 5rem 7rem 0 10rem; }
+
+.artist__description {
+  font-size: 1.5rem; }
+
+.artists__home {
+  margin: 3rem 0 2rem 0;
+  width: 50rem; }
+
+.artists__home--img {
+  border-radius: 50%;
+  margin-left: 2.5rem;
+  width: 12rem; }
+
+.artists__home--name {
+  font-size: 2rem;
+  text-align: center; }
+  .artists__home--name a {
+    text-decoration: none;
+    color: #2A2438; }
+    .artists__home--name a:hover {
+      color: #FFFF; }
+
+.artists__home--title {
+  margin: 8.5rem 7rem 0 0;
+  position: relative; }
+  .artists__home--title h2 {
+    color: #2A2438;
+    font-size: 3.5rem;
+    z-index: 1000; }
 
 .artist__img {
   margin-left: 15rem; }
@@ -303,23 +322,17 @@ h1 {
     border-radius: 50%;
     width: 30rem; }
 
-.artist__content {
-  margin: 5rem 7rem 0 10rem; }
-
-.artist__description {
-  color: #FFFF;
-  font-size: 1.5rem; }
+.artists__inArtist {
+  font-size: 2rem;
+  text-align: center; }
+  .artists__inArtist a {
+    text-decoration: none; }
+    .artists__inArtist a:hover {
+      color: #59C170; }
 
 .artist__songs {
   position: relative; }
 
 .artist__songs--list {
   position: absolute;
-  right: 12rem; }
-=======
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;700&display=swap");html{font-size:10px;font-family:"Manrope",sans-serif;margin:0}body{background:#2A2438}.cursor{cursor:pointer}.musicList{display:inline-block;width:40rem}.musicList__item{border-bottom:0.1rem solid #59C170;display:flex;justify-content:space-between;margin-bottom:1.5rem}.musicList__img{height:5rem;margin-top:.5rem;width:5rem}.musicList__play{background:none;border:none}.musicList__play--img{width:4rem;height:4rem}.musicList__song{font-size:2rem;list-style:none;margin:0;padding:0}.musicList__title{display:flex;font-size:2rem;justify-content:space-between;margin-bottom:3rem}.musicList__title--active{border-bottom:0.3rem solid #59C170;padding-bottom:1.5rem}.active{background-image:url(../../img/stop-button.png)}.header{margin:0 auto;margin-top:5rem;max-width:90%;padding-bottom:2rem;width:100%}.header__content{display:flex;justify-content:space-between}.header__content img{height:80%}#musicPlayerCanvas{border-radius:2rem;margin-bottom:2rem}.musicPlayer__controls{align-items:center;display:flex;justify-content:space-between;text-align:center;transition:5s all}.music__player--title{color:#fff;font-size:3rem}.music__player--title span{color:#59C170}.wrapper{max-width:102rem;margin:0 auto}
-=======
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;700&display=swap");html{font-size:10px;font-family:"Manrope",sans-serif}body{background:#2A2438;margin:0}h1{color:#fff;font-size:4rem;margin:0}.cursor{cursor:pointer}.bottom{margin-top:7rem;position:relative}.bottom__text{color:#fff;font-size:1.5rem;padding-bottom:3rem;position:absolute;right:7rem}.header{margin:0 auto;margin-top:3rem;max-width:92%}.header__content{display:flex;justify-content:space-between}.header__content img{width:50%}.musicList{display:inline-block;width:40rem}.musicList__item{border-bottom:0.1rem solid #59C170;display:flex;justify-content:space-between;margin-bottom:1.5rem}.musicList__img{height:5rem;margin-top:.5rem;width:5rem}.musicList__play{background:none;border:none}.musicList__play--img{width:4rem;height:4rem}.musicList__song{font-size:2rem;list-style:none;margin:0;padding:0}.musicList__title{display:flex;font-size:2rem;justify-content:space-between;margin-bottom:3rem}.musicList__title--active{border-bottom:0.3rem solid #59C170;padding-bottom:1.5rem}.header{margin:0 auto;margin-top:5rem;max-width:90%;padding-bottom:2rem;width:100%}.header__content{display:flex;justify-content:space-between}#musicPlayerCanvas{border-radius:2rem;margin-bottom:2rem}.musicPlayer__controls{align-items:center;display:flex;justify-content:space-between;margin:0 auto;text-align:center}.musicPlayer__controls button{border:none;background:none}.music__player--title{color:#fff;font-size:2.5rem}.music__player--title span{color:#59C170}.modal{background-color:#7A69E1;border-radius:2rem;display:none;position:absolute;top:40rem;transform:translate(50%, -50%);width:40rem;z-index:1}.modal__content{margin:0 auto;width:95%}.modal__content--newPlaylist{margin-bottom:4rem}.modal__content--newPlaylist input{width:22rem;border-radius:4rem;border:none}.modal__content--newPlaylist button{background-color:#59C170;border:none;border-radius:.4rem;color:#fff;margin-top:2rem;padding:1rem;width:10rem}.modal__content--newPlaylist button:hover{background-color:#5548a1}.modal__content--title{color:#fff;font-size:4rem;letter-spacing:.1rem;margin-top:1rem}.modal__content--playlist{background-color:#2A2438;border-radius:2rem;color:white;font-size:1rem;width:100%;margin-bottom:2rem}.modal__content--playlist:hover{border:2px solid #fff}.modal__content--playlist p{font-size:1rem;margin:0;padding:.8rem}.modal__content--playlistContent h2{color:#59C170;letter-spacing:.1rem;font-size:1.5rem}.img__user{height:45%}.wrapper{max-width:102rem;margin:0 auto;position:relative}.visible{display:block}.artists__home{margin:3rem 0 2rem 0;width:50rem}.artists__home--img{border-radius:50%;margin-left:2.5rem;width:12rem}.artists__home--name{font-size:2rem;text-align:center}.artists__home--name a{text-decoration:none;color:#2A2438}.artists__home--name a:hover{color:#fff}.artists__home--title{margin:8.5rem 7rem 0 0;position:relative}.artists__home--title h2{color:#2A2438;font-size:3.5rem;z-index:1000}.home__artist{background-color:#7A69E1;width:100%}.home__flex{display:flex;justify-content:space-between}.welcome__img{display:block;margin:4rem 0 0 4rem}.welcome__typo-green{color:#59C170;font-size:2.5rem;margin:.7rem 0 2rem 0}.js--active{color:#fff}.js--unactive{color:#928d8d}.register{margin:12rem 10rem 0 0;width:35rem}.register__form{display:flex;flex-direction:column;padding-bottom:2rem;width:35rem}.register__form--button{align-self:flex-end;background-color:#7A69E1;border:none;border-radius:.4rem;color:#fff;cursor:pointer;margin-top:2rem;padding:1rem;width:10rem}.register__form--button:hover{background-color:#5548a1}.register__form--input{background:none;border:none;border-bottom:0.1rem solid #59C170;color:#fff;flex-direction:column;font-size:1.5rem;margin-bottom:1rem}.register__form--label{color:#fff;font-size:1.5rem;margin-bottom:1rem}.register__login{display:none}.register__options{display:flex;font-size:2rem;justify-content:space-between;margin-bottom:2rem}.register__option--login{color:#646363}.register__option--signin{color:#fff}.artist{margin:8rem}.artist__img{margin-left:15rem}.artist__img img{border-radius:50%;width:30rem}.artist__content{margin:5rem 7rem 0 10rem}.artist__description{color:#fff;font-size:1.5rem}
->>>>>>> be39c3b772ff9da4d2132ed4a3895fb1598a1e00
->>>>>>> 730a81d961104ffeb225c03a615e55999277e9f4
+  right: 7.5rem; }
