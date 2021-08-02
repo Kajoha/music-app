@@ -6,7 +6,7 @@ function statusLogIn(data){
     }else if (data.Userdata === false){
         statusofLogIn.innerHTML = 'The password is not correct';
     }else{
-        // All the info of the user\
+        // All the info of the user
         console.log(data);
     }
 }

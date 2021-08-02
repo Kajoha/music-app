@@ -1,0 +1,36 @@
+.lastSong{
+    background-color:$green;
+    border-radius: 2rem;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+    text-align: center;
+    width: 60rem;
+}
+
+.lastSong__info{
+    padding-top: 1rem;
+}
+
+.lastSong__info--user{
+    color: $white;
+    font-size: $typo-x;
+    margin-top: 0;
+}
+
+.lastSong__info--text{
+    color: $white;
+    font-size: $typo-s;
+    margin: 0 0 3rem 0;
+}
+
+.lastSong__player--button{
+    background-color:$blue-main;
+    border-radius: 1rem;
+    margin: 0 auto;
+    padding: 1rem 0 1rem 0;
+    width: 15rem;
+}
+
+.lastSong__player{
+    padding-bottom: 2rem;
+}

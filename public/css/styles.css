@@ -333,3 +333,34 @@ h1 {
   padding: .5rem 3rem; }
   .account__userName--editName:hover {
     background-color: #5548a1; }
+
+.lastSong {
+  background-color: #59C170;
+  border-radius: 2rem;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  text-align: center;
+  width: 60rem; }
+
+.lastSong__info {
+  padding-top: 1rem; }
+
+.lastSong__info--user {
+  color: #FFFF;
+  font-size: 4rem;
+  margin-top: 0; }
+
+.lastSong__info--text {
+  color: #FFFF;
+  font-size: 1.5rem;
+  margin: 0 0 3rem 0; }
+
+.lastSong__player--button {
+  background-color: #2A2438;
+  border-radius: 1rem;
+  margin: 0 auto;
+  padding: 1rem 0 1rem 0;
+  width: 15rem; }
+
+.lastSong__player {
+  padding-bottom: 2rem; }
