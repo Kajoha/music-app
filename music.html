@@ -18,14 +18,14 @@
         </div>
         <div class="musicPlayer__controls">
           <p class="music__player--title">Playing <span>Music Name</span></p>
-          <audio class="music js__listening" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
+          <audio class="music js__listening" src="https://cetav.s3.us-east-2.amazonaws.com/rhinestone-eyes.mp3" type="audio/mp3" crossOrigin="anonymous"></audio>
           <button class="button__addPlaylist ">
             <img class="img__cursor addPlaylist" src="./img/add-playlist.png" alt="add-playlist-button">
           </button>
           <button class="button__previousSong ">
             <img class=" img__cursor previousButton" src="./img/left-arrow.png" alt="previous-song-button">
           </button>
-          <button class="button__playSong">
+          <button class="button__playSong js--playsong">
             <img class="img__cursor playButton" src="./img/play-button.png" alt="play-button">
           </button>
           <button class="button__nextSong ">
@@ -61,7 +61,7 @@
       </div>
     </div>
   </div>
-  <script src="js/music.js" type="module"></script>
+  <script src="js/musicPlayer.js" type="module"></script>
 </body>
 
 </html
