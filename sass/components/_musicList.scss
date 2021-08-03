@@ -1,5 +1,6 @@
 .musicList {
   display: inline-block;
+  margin-top: 2rem;
   width: 40rem;
 }
 
@@ -69,6 +70,7 @@
 
 .musicList__title--active {
   border-bottom: .3rem solid $green;
+  color: $green;
   padding-bottom: 1.5rem;
 }
 

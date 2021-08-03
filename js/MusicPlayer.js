@@ -9,14 +9,14 @@ const playButton = document.querySelector('.playButton');
 let musicController = '';
 
 function songCreation(audio) {
-  const context = new AudioContext(); 
+  const context = new AudioContext();
   const src = context.createMediaElementSource(audio);
-  const analyser = context.createAnalyser(); 
-  analyser.connect(context.destination);  
-  analyser.fftSize = 512; 
+  const analyser = context.createAnalyser();
+  analyser.connect(context.destination);
+  analyser.fftSize = 512;
   src.connect(analyser);
-  const dataArray = new Uint8Array(analyser.frequencyBinCount); 
-  const bufferLength = analyser.frequencyBinCount; 
+  const dataArray = new Uint8Array(analyser.frequencyBinCount);
+  const bufferLength = analyser.frequencyBinCount;
   const barWidth = (width / bufferLength) * 1.5;
   let barHeight;
   let x = 0;
@@ -55,7 +55,7 @@ function start(song) {
 }
 
 const especificSong = buttonPlayer.addEventListener('click', (data) => {
-	musicController = data.songid;
+  musicController = data.songid;
   const musicName = data.name;
   music.src = data.audio;
   music.load();

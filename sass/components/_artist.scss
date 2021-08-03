@@ -4,7 +4,7 @@
 }
 
 .artist__content {
-  margin: 5rem 7rem 0 10rem;
+  margin: 5rem 7rem 0 12rem;
 }
 
 .artist__description {
@@ -38,14 +38,13 @@
   h2 {
     color: $blue-main;
     font-size: 3.5rem;
-    z-index: 1000;
   }
   margin: 8.5rem 7rem 0 0;
   position: relative;
 }
 
 .artist__img {
-  margin-left: 15rem;
+  margin-left: 12rem;
   img {
     border-radius: 50%;
     width: 30rem;
@@ -53,14 +52,20 @@
 }
 
 .artists__inArtist {
+  margin: 3rem 0 2rem 18.5rem;
+  width: 20rem;
+}
+
+.artists__inArtist--name {
   a{
+    color: $white;
     text-decoration: none;
     &:hover {
       color: $green;
     }
   }
   font-size: $typo-m;
-  text-align: center;
+  margin-left: 4rem;
 }
 
 .artist__songs {

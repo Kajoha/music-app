@@ -1,0 +1,38 @@
+.profile {
+  margin: 4rem 20rem 0 18rem;
+}
+
+.playList {
+  h2 {
+    font-size: $typo-l;
+  }
+  h3 {
+    font-size: $typo-m;
+  }
+  padding-top: 22rem;
+}
+
+.playlist__list {
+  display: inline-block;
+  margin-top: 2rem;
+  width: 40rem;
+}
+
+.playlist__items--edit {
+  right: 14rem;
+}
+
+.playlist__items--delete {
+  right: 3rem;
+}
+
+.right__style {
+  background-image: url('./../../img/headset.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 20rem;
+  top: 3rem;
+  width: 40rem;
+  height: 50rem;
+}

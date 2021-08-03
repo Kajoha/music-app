@@ -25,7 +25,7 @@ fetch(apiArtists).then((response) => response.json()).then((data) => {
   });
   const artists = data.filter((data) => data.id !== nameArtist);
   const loard = new LoadArtists(artists);
-  loard.addArtists();
+  loard.addArtists(true);
 });
 
 const musicArtist = new Musiclist();

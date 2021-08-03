@@ -1,4 +1,5 @@
 import Musiclist from './modules/musiclist.js';
+import Playlist from './modules/playlist.js';
 
 const editName = document.querySelector('.js--editName');
 const UserName = document.querySelector('.account__userName--name');
@@ -11,9 +12,7 @@ function changeNameDataBase(Username) {
       'Content-Type': 'application/json',
     },
   })
-    .then((response) => {
-      return response.json();
-    })
+    .then((response) => response.json())
     .then((data) => {
       console.log(data)
       UserName.innerHTML = data.data.name;
@@ -65,3 +64,18 @@ window.onload = function () {
     });
   });
 };
+
+const playlist = new Playlist();
+playlist.getPlaylist();
+
+function listSongs() {
+  document.addEventListener('click', (event) => {
+    const clicElement = ((event.target).parentNode);
+    const id = clicElement.getAttribute('data-id');
+    console.log(id);
+    const list = document.getElementsByClassName('paintSongs');
+    console.log(list[0])
+  });
+}
+
+listSongs();
