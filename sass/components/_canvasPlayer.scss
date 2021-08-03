@@ -1,37 +1,44 @@
-/*
-.header{
-    margin: 0 auto;
-    margin-top: 5rem;
-    max-width: 90%;
-    padding-bottom: 2rem;
-    width: 100%;
+.addPlaylist{
+    padding-left: 6rem;
 }
-
-.header__content{
+.music__player{
+    align-items: center;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+}
+.music__player--background{
+    background-image: url('../../img/texture.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 #musicPlayerCanvas{
     border-radius: 2rem;
     margin-bottom: 2rem;
+    margin-top: 3rem;
 }
 
 .musicPlayer__controls{
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    text-align: center;
+    width: 40%;
     button{
         border: none;
         background: none;
+        margin-right: 1rem;
+        img{
+            width: 4rem;
+        }
     }
 }
 
 .music__player--title{
     color: $white;
-    font-size:$typo-l;
+    font-size:$typo-m;
+    margin-top: 0;
+    text-align: center;
     span{
         color: $green;
     }
@@ -105,8 +112,12 @@
         font-size: $typo-s;
     }
 }
-
-.img__user{
-    height: 45%;
+.wrapper{
+    max-width: $wrapper;
+    margin: 0 auto;
+    position: relative;
 }
-*/
+
+.visible{
+    display: block;
+}

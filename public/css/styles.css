@@ -8,7 +8,8 @@ html {
 
 body {
   color: #FFFF;
-  margin: 0; }
+  margin: 0;
+  min-height: 100vh; }
 
 h1 {
   color: #FFFF;
@@ -102,104 +103,118 @@ h1 {
   border-bottom: 0.3rem solid #59C170;
   padding-bottom: 1.5rem; }
 
-.header {
-  margin: 0 auto;
-  margin-top: 5rem;
-  max-width: 90%;
-  padding-bottom: 2rem;
-  width: 100%; }
+/*
+.header{
+    margin: 0 auto;
+    margin-top: 5rem;
+    max-width: 90%;
+    padding-bottom: 2rem;
+    width: 100%;
+}
 
-.header__content {
-  display: flex;
-  justify-content: space-between; }
+.header__content{
+    display: flex;
+    justify-content: space-between;
+}
 
-#musicPlayerCanvas {
-  border-radius: 2rem;
-  margin-bottom: 2rem; }
+#musicPlayerCanvas{
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
 
-.musicPlayer__controls {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  text-align: center; }
-  .musicPlayer__controls button {
-    border: none;
-    background: none; }
+.musicPlayer__controls{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    text-align: center;
+    button{
+        border: none;
+        background: none;
+    }
+}
 
-.music__player--title {
-  color: #FFFF;
-  font-size: 2.5rem; }
-  .music__player--title span {
-    color: #59C170; }
+.music__player--title{
+    color: $white;
+    font-size:$typo-l;
+    span{
+        color: $green;
+    }
+}
 
-.modal {
-  background-color: #7A69E1;
-  border-radius: 2rem;
-  display: none;
-  position: absolute;
-  top: 40rem;
-  transform: translate(50%, -50%);
-  width: 40rem;
-  z-index: 1; }
+.modal{
+    background-color: $lila;
+    border-radius: 2rem;
+    display: none;
+    position: absolute;
+    top: 40rem;
+    transform: translate(50%,-50%);
+    width: 40rem;
+    z-index: 1;
+}
 
-.modal__content {
-  margin: 0 auto;
-  width: 95%; }
+.modal__content{
+    margin: 0 auto;
+    width: 95%;
+}
 
-.modal__content--newPlaylist {
-  margin-bottom: 4rem; }
-  .modal__content--newPlaylist input {
-    width: 22rem;
-    border-radius: 4rem;
-    border: none; }
-  .modal__content--newPlaylist button {
-    background-color: #59C170;
-    border: none;
-    border-radius: .4rem;
-    color: #FFFF;
-    margin-top: 2rem;
-    padding: 1rem;
-    width: 10rem; }
-    .modal__content--newPlaylist button:hover {
-      background-color: #5548a1; }
+.modal__content--newPlaylist{
+    margin-bottom: 4rem;
+    input{
+        width: 22rem;
+        border-radius: 4rem;
+        border: none;
+    }
+    button{
+        background-color: $green;
+        border: none;
+        border-radius: .4rem;
+        color: $white;
+        margin-top: 2rem;
+        padding: 1rem;
+        width: 10rem;
+        &:hover{
+            background-color: rgb(85, 72, 161);
+        }
+    }
+}
 
-.modal__content--title {
-  color: #FFFF;
-  font-size: 4rem;
-  letter-spacing: .1rem;
-  margin-top: 1rem; }
+.modal__content--title{
+    color: $white;
+    font-size: $typo-x;
+    letter-spacing: .1rem;
+    margin-top: 1rem;
+}
 
-.modal__content--playlist {
-  background-color: #2A2438;
-  border-radius: 2rem;
-  color: white;
-  font-size: 1rem;
-  width: 100%;
-  margin-bottom: 2rem; }
-  .modal__content--playlist:hover {
-    border: 2px solid #FFFF; }
-  .modal__content--playlist p {
-    font-size: 1rem;
-    margin: 0;
-    padding: .8rem; }
+.modal__content--playlist{
+    background-color: $blue-main;
+    border-radius: 2rem;
+    color: white;
+    font-size: $typo-xs;
+    width: 100%;
+    margin-bottom: 2rem;
+    &:hover{
+        border: 2px solid $white;
+    }
+    p{
+        font-size: $typo-xs;
+        margin: 0;
+        padding: .8rem;
+    }
+}
 
-.modal__content--playlistContent h2 {
-  color: #59C170;
-  letter-spacing: .1rem;
-  font-size: 1.5rem; }
+.modal__content--playlistContent{
+    h2{
+        color: $green;
+        letter-spacing: .1rem;
+        font-size: $typo-s;
+    }
+}
 
-.img__user {
-  height: 45%; }
-
-.wrapper {
-  max-width: 102rem;
-  margin: 0 auto;
-  position: relative; }
-
-.visible {
-  display: block; }
-
+.img__user{
+    height: 45%;
+}
+*/
 .home__artist {
   background-color: #7A69E1;
   width: 100%; }
@@ -404,3 +419,106 @@ h1 {
 
 .lastSong__player {
   padding-bottom: 2rem; }
+
+.addPlaylist {
+  padding-left: 6rem; }
+
+.music__player {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+
+.music__player--background {
+  background-image: url("../../img/texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+
+#musicPlayerCanvas {
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 3rem; }
+
+.musicPlayer__controls {
+  width: 40%; }
+  .musicPlayer__controls button {
+    border: none;
+    background: none;
+    margin-right: 1rem; }
+    .musicPlayer__controls button img {
+      width: 4rem; }
+
+.music__player--title {
+  color: #FFFF;
+  font-size: 2rem;
+  margin-top: 0;
+  text-align: center; }
+  .music__player--title span {
+    color: #59C170; }
+
+.modal {
+  background-color: #7A69E1;
+  border-radius: 2rem;
+  display: none;
+  position: absolute;
+  top: 40rem;
+  transform: translate(50%, -50%);
+  width: 40rem;
+  z-index: 1; }
+
+.modal__content {
+  margin: 0 auto;
+  width: 95%; }
+
+.modal__content--newPlaylist {
+  margin-bottom: 4rem; }
+  .modal__content--newPlaylist input {
+    width: 22rem;
+    border-radius: 4rem;
+    border: none; }
+  .modal__content--newPlaylist button {
+    background-color: #59C170;
+    border: none;
+    border-radius: .4rem;
+    color: #FFFF;
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 10rem; }
+    .modal__content--newPlaylist button:hover {
+      background-color: #5548a1; }
+
+.modal__content--title {
+  color: #FFFF;
+  font-size: 4rem;
+  letter-spacing: .1rem;
+  margin-top: 1rem; }
+
+.modal__content--playlist {
+  background-color: #2A2438;
+  border-radius: 2rem;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 2rem; }
+  .modal__content--playlist:hover {
+    border: 2px solid #FFFF; }
+  .modal__content--playlist p {
+    font-size: 1rem;
+    margin: 0;
+    padding: .8rem; }
+
+.modal__content--playlistContent h2 {
+  color: #59C170;
+  letter-spacing: .1rem;
+  font-size: 1.5rem; }
+
+.wrapper {
+  max-width: 102rem;
+  margin: 0 auto;
+  position: relative; }
+
+.visible {
+  display: block; }

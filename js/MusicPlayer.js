@@ -2,7 +2,6 @@ import SongPlayer from '../js/modules/SongPlayer.js';
 const canvas = document.getElementById('musicPlayerCanvas');
 const ctx = canvas.getContext('2d');
 const music = document.querySelector('.music');
-const buttonPlayer = document.querySelectorAll('.js__listening');
 const width = canvas.width;
 const height = canvas.height;
 const playButton = document.querySelector('.playButton');
@@ -53,14 +52,6 @@ function start(song) {
     e.target.classList.toggle('active');
   });
 }
-
-const especificSong = buttonPlayer.addEventListener('click', (data) => {
-	musicController = data.songid;
-  const musicName = data.name;
-  music.src = data.audio;
-  music.load();
-  start(music);
-});
 
 const SongsList = new SongPlayer();
 SongsList.addPlaylistModal();
