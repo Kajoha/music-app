@@ -45,4 +45,15 @@ export default class User {
     accountUserButton.appendChild(buttonEdit);
     userName.appendChild(accountUserButton);
   }
+
+  UserHomeName(){
+    const dataUserLogedIn = document.querySelector('.lastSong__info');
+    const nameofTheUser = document.createElement('h2');
+    nameofTheUser.setAttribute('class','lastSong__info--user');
+    nameofTheUser.innerHTML = 'Welcome,';
+    dataUserLogedIn.appendChild(nameofTheUser);
+    const name = document.createElement('span');
+    nameofTheUser.appendChild(name);
+    name.innerHTML = ` ${this.data.data.name}`;
+  }
 }

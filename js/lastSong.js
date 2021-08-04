@@ -1,7 +1,7 @@
 import LoadArtists from './modules/artists.js';
+import User from './modules/UserName.js';
 
 const LastSongButton = document.querySelector('.lastSong__player--button img');
-const lastSongNameUser = document.querySelector('.lastSong__info--user span');
 const userIdStorage = localStorage.getItem('UserId');;
 
 function ActualUserName() {
@@ -12,7 +12,8 @@ function ActualUserName() {
       return response.json();
     })
     .then((data) => {
-      lastSongNameUser.innerHTML = data.data.name;
+      const actualUser = new User(data,null);
+      actualUser.UserHomeName();
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -27,7 +28,7 @@ fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists').t
 ActualUserName();
 /*
 function lastSong(ActualSong){
-    LastSongButton.dataset.audio = ActualSong.audio;
+  LastSongButton.dataset.audio = ActualSong.audio;
 }
 
 lastSong();

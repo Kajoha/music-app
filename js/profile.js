@@ -27,7 +27,7 @@ function saveName(name) {
   const currentUserName = {
     "name": `${name.innerHTML}`,
   };
-  const changeNameOfUser = new user(currentUserName,getEspecificUser);
+  const changeNameOfUser = new User(currentUserName,getEspecificUser);
   changeNameOfUser.updateName();
 }
 
