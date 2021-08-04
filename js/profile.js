@@ -1,26 +1,24 @@
 import Musiclist from './modules/musiclist.js';
+import User from './modules/UserName.js';
 
-const editName = document.querySelector('.js--editName');
-const UserName = document.querySelector('.account__userName--name');
+const getEspecificUser = localStorage.getItem('UserId');
+const profile = document.querySelector('.js-account');
 
-function changeNameDataBase(Username) {
-  fetch('http://localhost:3000/user/name/6105b1566df8f20f5c99a4c1', {
-    method: 'PUT',
-    body: JSON.stringify(Username),
-    headers: {
-      'Content-Type': 'application/json',
-    },
+function changenameDom(){
+  fetch(`http://localhost:3000/user/${getEspecificUser}`, {
+    method: 'GET',
   })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data)
-      UserName.innerHTML = data.data.name;
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data)
+    const userDom = new User(data,null);
+    userDom.nameDOM();
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 }
 
 function saveName(name) {
@@ -29,21 +27,25 @@ function saveName(name) {
   const currentUserName = {
     "name": `${name.innerHTML}`,
   };
-  changeNameDataBase(currentUserName);
+  const changeNameOfUser = new user(currentUserName,getEspecificUser);
+  changeNameOfUser.updateName();
 }
 
-editName.addEventListener('click', () => {
-  if(!editName.classList.contains('save')){
-    editName.innerHTML = 'Save name';
-    UserName.setAttribute('contenteditable', 'true');
-    UserName.style.borderBottom = '1px solid white';
+profile.addEventListener('click', (e) => {
+  if(e.target.classList.contains('js--editName')){
+    const UserName = document.querySelector('.account__userName--name');
+    if(!e.target.classList.contains('save')){
+      e.target.innerHTML = 'Save name';
+      UserName.setAttribute('contenteditable', 'true');
+      UserName.style.borderBottom = '1px solid white';
+    }
+    else{
+      UserName.style.borderBottom = 'none';
+      e.target.innerHTML = 'Edit';
+      saveName(UserName);
+    }
+    e.target.classList.toggle('save');
   }
-  else{
-    UserName.style.borderBottom = 'none';
-    editName.innerHTML = 'Edit';
-    saveName(UserName);
-  }
-  editName.classList.toggle('save');
 });
 
 const musiclist = new Musiclist();
@@ -69,3 +71,4 @@ window.onload = function () {
     });
   });
 };
+changenameDom();

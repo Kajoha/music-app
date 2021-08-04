@@ -6,7 +6,8 @@ function statusLogIn(data){
     }else if (data.Userdata === false){
         statusofLogIn.innerHTML = 'The password is not correct';
     }else{
-        console.log(data);
+        localStorage.setItem('UserId', (data.Userdata._id));
+        window.location.href = 'lastSong.html';
     }
 }
 
@@ -16,7 +17,8 @@ function statusSignIn(data) {
     if (data.newUser === true) {
         statusofEmail.innerHTML = 'The email is actually linked to a user';
     } else {
-        
+        localStorage.setItem('UserId',data.newUser._id);
+        window.location.href = 'lastSong.html';
     }
 }
 

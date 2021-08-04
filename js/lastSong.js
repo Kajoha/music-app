@@ -1,15 +1,35 @@
 import LoadArtists from './modules/artists.js';
 
 const LastSongButton = document.querySelector('.lastSong__player--button img');
+const lastSongNameUser = document.querySelector('.lastSong__info--user span');
+const userIdStorage = localStorage.getItem('UserId');;
+
+function ActualUserName() {
+  fetch(`http://localhost:3000/user/${userIdStorage}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      lastSongNameUser.innerHTML = data.data.name;
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+}
 
 fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists').then((response) => response.json()).then((data) => {
-    const load = new LoadArtists(data);
-    load.addArtists();
+  const load = new LoadArtists(data);
+  load.addArtists();
 });
 
-
+ActualUserName();
+/*
 function lastSong(ActualSong){
     LastSongButton.dataset.audio = ActualSong.audio;
 }
 
 lastSong();
+
+*/
