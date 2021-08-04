@@ -5,7 +5,7 @@ const LastSongButton = document.querySelector('.lastSong__player--button img');
 const userIdStorage = localStorage.getItem('UserId');;
 
 function ActualUserName() {
-  fetch(`http://localhost:3000/user/${userIdStorage}`, {
+  fetch(`https://kaju-music.herokuapp.com/user/${userIdStorage}`, {
     method: 'GET',
   })
     .then((response) => {

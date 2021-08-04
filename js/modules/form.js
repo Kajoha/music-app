@@ -23,7 +23,7 @@ function statusSignIn(data) {
 }
 
 function addPerson(inputs) {
-    fetch('http://localhost:3000/user', {
+    fetch('https://kaju-music.herokuapp.com/user', {
         method: "POST",
         body: JSON.stringify(inputs),
         headers: {
@@ -42,7 +42,7 @@ function addPerson(inputs) {
 }
 
 function loggedPerson(UserInfo) {
-    fetch('http://localhost:3000/user/login', {
+    fetch('https://kaju-music.herokuapp.com/user/login', {
         method: "POST",
         body: JSON.stringify(UserInfo),
         headers: {

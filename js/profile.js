@@ -5,7 +5,7 @@ const getEspecificUser = localStorage.getItem('UserId');
 const profile = document.querySelector('.js-account');
 
 function changenameDom(){
-  fetch(`http://localhost:3000/user/${getEspecificUser}`, {
+  fetch(`https://kaju-music.herokuapp.com/user/${getEspecificUser}`, {
     method: 'GET',
   })
   .then((response) => {

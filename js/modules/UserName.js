@@ -5,7 +5,7 @@ export default class User {
   }
 
   updateName() {
-    fetch(`http://localhost:3000/user/name/${this.getEspecificUser}`, {
+    fetch(`https://kaju-music.herokuapp.com/user/name/${this.getEspecificUser}`, {
       method: 'PUT',
       body: JSON.stringify(this.data),
       headers: {
