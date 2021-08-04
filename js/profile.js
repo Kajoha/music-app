@@ -12,7 +12,6 @@ function changenameDom(){
     return response.json();
   })
   .then((data) => {
-    console.log(data)
     const userDom = new User(data,null);
     userDom.nameDOM();
   })
