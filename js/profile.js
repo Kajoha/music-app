@@ -50,7 +50,7 @@ window.onload = function () {
   Array.from(filters).forEach((element) => {
     element.addEventListener('click', (e) => {
       const filter = e.target.dataset.filter;
-      document.querySelector('.js--playlist').innerHTML = '';
+      document.querySelector('.js--musiclist').innerHTML = '';
       switch (filter) {
         case 'recently':
           musiclist.getRecent();
@@ -66,15 +66,14 @@ window.onload = function () {
 };
 
 const playlist = new Playlist();
-playlist.getPlaylist();
+playlist.getPlaylists();
 
 function listSongs() {
   document.addEventListener('click', (event) => {
     const clicElement = ((event.target).parentNode);
+    document.querySelector('.js--playlist').innerHTML = '';
     const id = clicElement.getAttribute('data-id');
-    console.log(id);
-    const list = document.getElementsByClassName('paintSongs');
-    console.log(list[0])
+    playlist.getPlaylist(id);
   });
 }
 

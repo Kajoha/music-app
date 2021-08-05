@@ -1,4 +1,4 @@
-import BuilderSong from './song.js';
+import BuilderList from './builderList.js';
 
 export default class Musiclist {
   songs = [];
@@ -8,7 +8,7 @@ export default class Musiclist {
 
   getSong(id) {
     fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/${id}`).then(response => response.json()).then(song => {
-      new BuilderSong(song).createSong(false);
+      new BuilderList(song).createSong(false);
     })
   }
 
@@ -35,7 +35,7 @@ export default class Musiclist {
     fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/${idArtist}`).then((response) => response.json()).then((data) => {
       const artist = data;
       artist.forEach(song => {
-        new BuilderSong(song).createSong(false);
+        new BuilderList(song).createSong(false);
       });
     });
   };
