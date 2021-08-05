@@ -215,6 +215,21 @@ h1 {
     height: 45%;
 }
 */
+.header__content--menu ul {
+  display: flex;
+  justify-content: space-between; }
+
+.header__content--menu a {
+  color: #FFFF;
+  font-size: 1.5rem;
+  margin-left: 4rem;
+  text-decoration: none; }
+  .header__content--menu a :hover {
+    border-bottom: 2px solid #59C170; }
+
+.header__content--menu li {
+  list-style: none; }
+
 .home__artist {
   background-color: #7A69E1;
   width: 100%; }
@@ -365,13 +380,22 @@ h1 {
   display: inline-block;
   padding-bottom: 1.5rem; }
 
+.account__logOut {
+  align-items: center;
+  border-bottom: 0.2rem solid #59C170;
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
+  margin: 0rem 0 6rem 0;
+  width: 40rem; }
+
 .account__userName {
   align-items: center;
   border-bottom: .2rem solid;
   border-color: #59C170;
   display: flex;
   justify-content: space-between;
-  margin: 6rem 0 6rem 0;
+  margin: 6rem 0 3rem 0;
   padding-bottom: 2.4rem;
   width: 40rem; }
 
@@ -395,10 +419,13 @@ h1 {
   margin: 0 auto;
   margin-bottom: 10rem;
   text-align: center;
-  width: 60rem; }
+  width: 45rem; }
 
 .lastSong__info {
   padding-top: 1rem; }
+
+.lastSong__user {
+  padding-top: 2rem; }
 
 .lastSong__info--user {
   color: #FFFF;
@@ -455,7 +482,8 @@ h1 {
   color: #FFFF;
   font-size: 2rem;
   margin-top: 0;
-  text-align: center; }
+  text-align: center;
+  margin-left: 3rem; }
   .music__player--title span {
     color: #59C170; }
 

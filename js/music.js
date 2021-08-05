@@ -77,7 +77,7 @@ function previousSong(data){
 		if(musicController < 0){
 			musicController = data.length - 1;
 		}
-		console.log('next',data[musicController].audio)
+		console.log('next',data[musicController].audio);
 		song(data[musicController].audio);
 	})
 }
@@ -104,7 +104,7 @@ function nextSong(data){
 		if(musicController > data.length - 1){
 			musicController = 0;
 		}
-		console.log('next',data[musicController].audio)
+		console.log('next',data[musicController].audio);
 		song(data[musicController].audio);
 	})
 }

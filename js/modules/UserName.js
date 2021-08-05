@@ -43,10 +43,23 @@ export default class User {
     buttonEdit.innerHTML = 'Edit';
     accountUserButton.appendChild(buttonEdit);
     userName.appendChild(accountUserButton);
+    const logOut = document.createElement('div');
+    logOut.setAttribute('class','account__logOut');
+    const logOutUser = document.createElement('p');
+    logOutUser.innerHTML = 'Log Out';
+    logOut.appendChild(logOutUser);
+    profile.appendChild(logOut);
+    const logOutRedirection = document.createElement('a');
+    logOutRedirection.setAttribute('href','index.html');
+    const logOutButton = document.createElement('img');
+    logOutButton.setAttribute('src','../../img/log-out.png');
+    logOutButton.setAttribute('class','js--logoutButton')
+    logOutRedirection.appendChild(logOutButton);
+    logOut.appendChild(logOutRedirection);
   }
 
   UserHomeName(){
-    const dataUserLogedIn = document.querySelector('.lastSong__info');
+    const dataUserLogedIn = document.querySelector('.lastSong__user');
     const nameofTheUser = document.createElement('h2');
     nameofTheUser.setAttribute('class','lastSong__info--user');
     nameofTheUser.innerHTML = 'Welcome,';

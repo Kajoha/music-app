@@ -30,6 +30,12 @@ function saveName(name) {
   changeNameOfUser.updateName();
 }
 
+function logoutUser(logoutButton){
+  if(logoutButton.classList.contains('js--logoutButton')){
+    localStorage.clear();
+  }
+}
+
 profile.addEventListener('click', (e) => {
   if(e.target.classList.contains('js--editName')){
     const UserName = document.querySelector('.account__userName--name');
@@ -45,6 +51,7 @@ profile.addEventListener('click', (e) => {
     }
     e.target.classList.toggle('save');
   }
+  logoutUser(e.target);
 });
 
 const musiclist = new Musiclist();
