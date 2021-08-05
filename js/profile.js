@@ -1,21 +1,20 @@
 import Musiclist from './modules/musiclist.js';
 import Playlist from './modules/playlist.js';
+import User from './modules/UserName.js';
 
-const editName = document.querySelector('.js--editName');
-const UserName = document.querySelector('.account__userName--name');
+const getEspecificUser = localStorage.getItem('UserId');
+const profile = document.querySelector('.js-account');
 
-function changeNameDataBase(Username) {
-  fetch('http://localhost:3000/user/name/6105b1566df8f20f5c99a4c1', {
-    method: 'PUT',
-    body: JSON.stringify(Username),
-    headers: {
-      'Content-Type': 'application/json',
-    },
+function changenameDom() {
+  fetch(`https://kaju-music.herokuapp.com/user/${getEspecificUser}`, {
+    method: 'GET',
   })
-    .then((response) => response.json())
+    .then((response) => {
+      return response.json();
+    })
     .then((data) => {
-      console.log(data)
-      UserName.innerHTML = data.data.name;
+      const userDom = new User(data, null);
+      userDom.nameDOM();
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -23,22 +22,37 @@ function changeNameDataBase(Username) {
 }
 
 function saveName(name) {
-  window.addEventListener('keydown', (event) => {
-    name.style.borderBottom = 'none';
-    if (event.keyCode === 13) {
-      name.setAttribute('contenteditable', 'false');
-      const currentUserName = {
-        "name": `${name.innerHTML}`,
-      };
-      changeNameDataBase(currentUserName);
-    }
-  });
+  name.style.borderBottom = 'none';
+  name.setAttribute('contenteditable', 'false');
+  const currentUserName = {
+    "name": `${name.innerHTML}`,
+  };
+  const changeNameOfUser = new User(currentUserName, getEspecificUser);
+  changeNameOfUser.updateName();
 }
 
-editName.addEventListener('click', () => {
-  UserName.setAttribute('contenteditable', 'true');
-  UserName.style.borderBottom = '1px solid white';
-  saveName(UserName);
+function logoutUser(logoutButton) {
+  if (logoutButton.classList.contains('js--logoutButton')) {
+    localStorage.clear();
+  }
+}
+
+profile.addEventListener('click', (e) => {
+  if (e.target.classList.contains('js--editName')) {
+    const UserName = document.querySelector('.account__userName--name');
+    if (!e.target.classList.contains('save')) {
+      e.target.innerHTML = 'Save name';
+      UserName.setAttribute('contenteditable', 'true');
+      UserName.style.borderBottom = '1px solid white';
+    }
+    else {
+      UserName.style.borderBottom = 'none';
+      e.target.innerHTML = 'Edit';
+      saveName(UserName);
+    }
+    e.target.classList.toggle('save');
+  }
+  logoutUser(e.target);
 });
 
 const musiclist = new Musiclist();
@@ -78,3 +92,4 @@ function listSongs() {
 }
 
 listSongs();
+changenameDom();
