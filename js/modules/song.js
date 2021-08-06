@@ -11,9 +11,6 @@ addFavorite(userId) {
     },
   })
     .then((response) => response.json())
-    .catch((error) => {
-      console.error('Error:', error);
-    });
 }
 
 removeFavorite(userId) {
@@ -27,9 +24,6 @@ removeFavorite(userId) {
     },
   })
     .then((response) => response.json())
-    .catch((error) => {
-      console.error('Error:', error);
-    });
 }
 
 addToPlaylist(idPlaylist) {
@@ -43,9 +37,6 @@ addToPlaylist(idPlaylist) {
     },
   })
     .then((response) => response.json())
-    .catch((error) => {
-      console.error('Error:', error);
-    });
 }
 
 removePlaylist(idPlaylist) {
@@ -59,7 +50,4 @@ removePlaylist(idPlaylist) {
     },
   })
     .then((response) => response.json())
-    .catch((error) => {
-      console.error('Error:', error);
-    });
 }

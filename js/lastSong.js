@@ -1,22 +1,18 @@
 import LoadArtists from './modules/artists.js';
 import User from './modules/userName.js';
+import SongPlayer from './modules/songPlayer.js';
+import MusicPlayer from './modules/playerBuilder.js';
 
-const LastSongButton = document.querySelector('.lastSong__player--button img');
-const userIdStorage = localStorage.getItem('UserId');;
+const userIdStorage = localStorage.getItem('UserId');
 
 function ActualUserName() {
   fetch(`https://kaju-music.herokuapp.com/user/${userIdStorage}`, {
     method: 'GET',
   })
-    .then((response) => {
-      return response.json();
-    })
+    .then((response) => response.json())
     .then((data) => {
       const actualUser = new User(data, null);
       actualUser.UserHomeName();
-    })
-    .catch((error) => {
-      console.error('Error:', error);
     });
 }
 
@@ -27,3 +23,24 @@ fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists').t
 
 ActualUserName();
 
+function savedLocalStorage() {
+  const artist = document.querySelector('.home__artist');
+  artist.addEventListener('click', (event) => {
+    const clicElement = ((event.target).parentNode);
+    const id = clicElement.getAttribute('data-id');
+    localStorage.setItem('click', id);
+  });
+}
+
+savedLocalStorage();
+
+window.onload = function () {
+  const playButton = document.querySelector('.js--listening');
+  playButton.addEventListener('click', (e) => {
+    const audio = e.target.dataset.audio;
+    const musicPlayer = new MusicPlayer();
+    musicPlayer.controllers();
+    const songPlayer = new SongPlayer();
+    songPlayer.currentSong(audio);
+  });
+};

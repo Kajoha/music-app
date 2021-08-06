@@ -44,6 +44,7 @@ h1 {
 .musicList {
   display: inline-block;
   margin-top: 2rem;
+  padding-bottom: 12rem;
   width: 40rem; }
 
 .musicList__item {
@@ -321,6 +322,9 @@ h1 {
   margin-top: 8rem;
   margin-bottom: 2rem; }
 
+.artists--artist {
+  padding-bottom: 10rem; }
+
 .artist__content {
   margin: 5rem 7rem 0 12rem; }
 
@@ -495,16 +499,14 @@ h1 {
 
 .music__player--background {
   background-color: #2A2438;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: fixed;
   bottom: 0;
   width: 100%; }
 
 #musicPlayerCanvas {
   border-radius: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 3rem; }
+  margin-bottom: 1rem;
+  margin-top: 1rem; }
 
 .musicPlayer__controls {
   width: 40%; }

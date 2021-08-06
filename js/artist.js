@@ -30,6 +30,16 @@ fetch(apiArtists).then((response) => response.json()).then((data) => {
   loard.addArtists(true);
 });
 
+function savedLocalStorage() {
+  document.addEventListener('click', (event) => {
+    const clicElement = ((event.target).parentNode);
+    const id = clicElement.getAttribute('data-id');
+    localStorage.setItem('click', id);
+  });
+}
+
+savedLocalStorage();
+
 const musicArtist = new Musiclist();
 musicArtist.getArtist(nameArtist);
 
@@ -43,5 +53,5 @@ window.onload = function () {
       const songPlayer = new SongPlayer();
       songPlayer.currentSong(audio);
     }
-  })
-}
+  });
+};

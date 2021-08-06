@@ -23,7 +23,7 @@ export default class Playlist {
   };
 
   getPlaylists() {
-    fetch(`https://kaju-music.herokuapp.com/playlists/${this.userId}`).then(response => response.json()).then(data => {
+    fetch(`https://kaju-music.herokuapp.com/playlists?userId=${this.userId}`).then(response => response.json()).then(data => {
 
       const playlists = data.data;
       playlists.forEach(playlists => {

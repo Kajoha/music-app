@@ -35,13 +35,14 @@
 
       <div class="account js-account">
       </div>
+
       <div class="musicList">
         <div class="musicList__title">
           <h3 class="musicList__title--active cursor js--musicList" data-filter="recently">Recently Played</h3>
           <h3 class="cursor js--musicList" data-filter="favorites">Your favorites</h3>
         </div>
         <div>
-          <ul class="musicList__song js--musiclist"></ul>
+          <ul class="musicList__song js--playSong js--musiclist"></ul>
         </div>
       </div>
 
@@ -49,23 +50,23 @@
 
     <div class="playList playlist__list">
       <h2>Your Playlist</h2>
-      <ul class="playList__title js--title"></ul>
-      <ul class="js--playlist"></ul>
+      <ul class="playList__title js--playSong js--title"></ul>
+      <ul class="js--playlist js--playSong"></ul>
     </div>
 
   </div>
 
-  <div class="music__player wrapper">
-    <div class="music__player--canvas">
-      <canvas id="musicPlayerCanvas" width="500px" height="100px"></canvas>
-    </div>
-    <div class="musicPlayer__controls">
-      <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
+  <div class="music__player--background">
+    <div class="music__player wrapper">
+      <div class="music__player--canvas">
+        <canvas id="musicPlayerCanvas" width="500px" height="70px"></canvas>
+      </div>
+      <div class="musicPlayer__controls">
+        <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
+      </div>
     </div>
   </div>
   <div class="modal js--modal"></div>
-  
-  <script src="js/canvas.js" type="module"></script>
 
   <script src="js/profile.js" type="module"></script>
 </body>

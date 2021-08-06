@@ -7,6 +7,7 @@ export default class SongPlayer {
   modal = document.querySelector('.modal');
   addButton = document.querySelector('.addPlaylist');
   controls = document.querySelector('.musicPlayer__controls');
+
   constructor(musicController) {
     this.musicController = musicController;
   }
@@ -44,9 +45,9 @@ export default class SongPlayer {
   }
 
 
-  start(){
+  start() {
     controls.addEventListener('click', (e) => {
-      if(e.target.classList.contains('playButton')){
+      if (e.target.classList.contains('playButton')) {
         if (e.target.classList.contains('active')) {
           e.target.src = '../img/play-button.png';
           song.pause();
@@ -58,10 +59,9 @@ export default class SongPlayer {
       }
     });
   }
-  currentSong(audio){
+  currentSong(audio) {
     const music = document.querySelector('.music');
-    console.log('este es el songplayer',music)
-    music.setAttribute('src',`${audio}`);
+    music.setAttribute('src', `${audio}`);
     music.load();
     songCreation(music);
   }

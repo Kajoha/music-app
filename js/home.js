@@ -74,7 +74,8 @@ fetch(apiArtists).then((response) => response.json()).then((data) => {
 });
 
 function savedLocalStorage() {
-  document.addEventListener('click', (event) => {
+  const artist = document.querySelector('.home__artist');
+  artist.addEventListener('click', (event) => {
     const clicElement = ((event.target).parentNode);
     const id = clicElement.getAttribute('data-id');
     localStorage.setItem('click', id);

@@ -8,18 +8,16 @@
     width: 100%;
 }
 .music__player--background{
-    background-color: $blue-main;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  background-color: $blue-main;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 #musicPlayerCanvas{
     border-radius: 2rem;
-    margin-bottom: 2rem;
-    margin-top: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .musicPlayer__controls{

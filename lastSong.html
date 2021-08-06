@@ -36,7 +36,8 @@
       </div>
     </div>
   </div>
-  <div class="home__artist">
+
+  <div class="home__artist artists--artist">
     <div class="wrapper home__flex">
       <div class="artists__home home__flex js--artists"></div>
       <div class="artists__home--title">
@@ -45,17 +46,17 @@
     </div>
   </div>
 
-  <div class="music__player wrapper">
-    <div class="music__player--canvas">
-      <canvas id="musicPlayerCanvas" width="500px" height="100px"></canvas>
-    </div>
-    <div class="musicPlayer__controls">
-      <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
+  <div class="music__player--background">
+    <div class="music__player wrapper">
+      <div class="music__player--canvas">
+        <canvas id="musicPlayerCanvas" width="500px" height="70px"></canvas>
+      </div>
+      <div class="musicPlayer__controls">
+        <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
+      </div>
     </div>
   </div>
   <div class="modal js--modal"></div>
-  
-  <script src="js/canvas.js" type="module"></script>
 
   <script type="module" src="js/lastSong.js"></script>
 </body>

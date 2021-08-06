@@ -1,6 +1,8 @@
 import Musiclist from './modules/musiclist.js';
 import Playlist from './modules/playlist.js';
 import User from './modules/userName.js';
+import SongPlayer from './modules/songPlayer.js';
+import MusicPlayer from './modules/playerBuilder.js';
 
 const userId = localStorage.getItem('UserId');
 const profile = document.querySelector('.js-account');
@@ -9,15 +11,10 @@ function changenameDom() {
   fetch(`https://kaju-music.herokuapp.com/user/${userId}`, {
     method: 'GET',
   })
-    .then((response) => {
-      return response.json();
-    })
+    .then((response) => response.json())
     .then((data) => {
       const userDom = new User(data, null);
       userDom.nameDOM();
-    })
-    .catch((error) => {
-      console.error('Error:', error);
     });
 }
 
@@ -77,13 +74,25 @@ window.onload = function () {
       }
     });
   });
+
+  const playButton = document.querySelector('.js--playSong');
+  playButton.addEventListener('click', (e) => {
+    if (e.target.classList.contains('js--listening')) {
+      const audio = e.target.dataset.audio;
+      const musicPlayer = new MusicPlayer();
+      musicPlayer.controllers();
+      const songPlayer = new SongPlayer();
+      songPlayer.currentSong(audio);
+    }
+  });
 };
 
 const playlist = new Playlist(userId);
 playlist.getPlaylists();
 
 function listSongs() {
-  document.addEventListener('click', (event) => {
+  const list = document.querySelector('.js--title');
+  list.addEventListener('click', (event) => {
     const clicElement = ((event.target).parentNode);
     document.querySelector('.js--playlist').innerHTML = '';
     const id = clicElement.getAttribute('data-id');
