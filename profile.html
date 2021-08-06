@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/logo.png">
   <link rel="stylesheet" href="public/css/styles.css">
   <link rel="icon" href="img/logo.png">
   <title>Kaju - Profile</title>
@@ -18,59 +19,52 @@
       </div>
       <div class="header__content--menu">
         <ul>
-          <a href="lastSong.html"><li>Home</li></a>
-          <a href="profile.html"><li>My account</li></a>
+          <a href="profile.html">
+            <li>My account</li>
+          </a>
         </ul>
       </div>
     </div>
   </header>
 
-  <div class="wrapper">
-    <div class="account js-account">
+  <div class="right__style"></div>
+
+  <div class="wrapper home__flex profile">
+
+    <div id="Left">
+
+      <div class="account js-account">
+      </div>
+      <div class="musicList">
+        <div class="musicList__title">
+          <h3 class="musicList__title--active cursor js--musicList" data-filter="recently">Recently Played</h3>
+          <h3 class="cursor js--musicList" data-filter="favorites">Your favorites</h3>
+        </div>
+        <div>
+          <ul class="musicList__song js--musiclist"></ul>
+        </div>
+      </div>
+
     </div>
-    <div class="musicList">
-      <div class="musicList__title">
-        <h3 class="musicList__title--active cursor js--musicList" data-filter="recently">Recently Played</h3>
-        <h3 class="cursor js--musicList" data-filter="favorites">Your favorites</h3>
-      </div>
-      <div>
-        <ul class="musicList__song js--playlist">
 
-        </ul>
-      </div>
-    </div>
-
-    <div class="playList">
-      <div class="playList__title">
-
-      </div>
-      <div>
-        <ul class="musicList__song js--playlist">
-
-        </ul>
-      </div>
+    <div class="playList playlist__list">
+      <h2>Your Playlist</h2>
+      <ul class="playList__title js--title"></ul>
+      <ul class="js--playlist"></ul>
     </div>
 
   </div>
 
-  <div class="music__player--background">
-    <div class="music__player wrapper">
-      <div class="music__player--canvas">
-        <canvas id="musicPlayerCanvas" width="500px" height="100px"></canvas>
-      </div>
-      <div class="musicPlayer__controls">
-        <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
-      </div>
+  <div class="music__player wrapper">
+    <div class="music__player--canvas">
+      <canvas id="musicPlayerCanvas" width="500px" height="100px"></canvas>
+    </div>
+    <div class="musicPlayer__controls">
+      <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
     </div>
   </div>
   <div class="modal js--modal"></div>
-
-  <div class="bottom">
-    <p class="bottom__text">
-      Copyright © Ignacio & Karen
-    </p>
-  </div>
-
+  
   <script src="js/canvas.js" type="module"></script>
 
   <script src="js/profile.js" type="module"></script>

@@ -1,5 +1,7 @@
 import LoadArtists from './modules/artists.js';
 import Musiclist from './modules/musiclist.js';
+import SongPlayer from './modules/SongPlayer.js';
+import MusicPlayer from './modules/playerBuilder.js';
 
 const nameArtist = localStorage.getItem('click');
 const apiArtists = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
@@ -25,8 +27,21 @@ fetch(apiArtists).then((response) => response.json()).then((data) => {
   });
   const artists = data.filter((data) => data.id !== nameArtist);
   const loard = new LoadArtists(artists);
-  loard.addArtists();
+  loard.addArtists(true);
 });
 
 const musicArtist = new Musiclist();
 musicArtist.getArtist(nameArtist);
+
+window.onload = function () {
+  const playButton = document.querySelector('.js--musiclist');
+  playButton.addEventListener('click', (e) => {
+    if(e.target.classList.contains('js--listening')){
+      const audio = e.target.dataset.audio;
+      const musicPlayer = new MusicPlayer();
+      musicPlayer.controllers();
+      const songPlayer = new SongPlayer();
+      songPlayer.currentSong(audio);
+    }
+  })
+}

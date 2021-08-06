@@ -1,13 +1,11 @@
-export default class MusicPlayer{
-  
-    constructor(){
+export default class MusicPlayer {
+  constructor() { }
 
-    }
-    
-    controllers(){
-      let paintControllers = '';
-      const divControllers = document.querySelector('.musicPlayer__controls');
-      paintControllers = `
+  controllers() {
+    let paintControllers = '';
+    const divControllers = document.querySelector('.musicPlayer__controls');
+    paintControllers = `
+        <audio autoplay class="music" type="audio/mp3" crossOrigin="anonymous"></audio>
         <p class="music__player--title">Playing <span>Music Name</span></p>
         <button class="button__addPlaylist ">
           <img class="img__cursor addPlaylist" src="./img/add-playlist.png" alt="add-playlist-button">
@@ -25,13 +23,13 @@ export default class MusicPlayer{
           <img class=" img__cursor hearthButton" src="./img/hearth.png" alt="favorite-song-buton">
         </button>
         `;
-      divControllers.innerHTML = paintControllers;
-    }
+    divControllers.innerHTML = paintControllers;
+  }
 
-    addingPlaylists(){
-      let paintModal = '';
-      const divModal = document.querySelector('.js--modal');
-      paintModal = `  
+  addingPlaylists() {
+    let paintModal = '';
+    const divModal = document.querySelector('.js--modal');
+    paintModal = `
         <div class="modal__content">
         <h2 class="modal__content--title">Add to a list</h2>
         <div class="modal__content--newPlaylist">
@@ -54,6 +52,6 @@ export default class MusicPlayer{
         </div>
       </div>
       `;
-        divModal.innerHTML = paintModal;
-    }
+    divModal.innerHTML = paintModal;
+  }
 }

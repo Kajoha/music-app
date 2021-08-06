@@ -1,27 +1,36 @@
-import BuilderSong from "./song";
+import BuilderList from "./builderList.js";
 
 export default class Playlist {
-  urlApi = '';
   songs = [];
-  isPlayList = true
 
-  constructor(name) {
-    this.name = name;
-    this.initialize()
+  constructor(userid) {
+    this.userId = userid;
   }
 
-  initialize() {
-    fetch(this.urlApi).then(data => this.songs = data.map(song => new BuilderSong(song).createSong(this.isPlayList)))
+  getSong(id) {
+    fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/${id}`).then(response => response.json()).then(song => {
+      new BuilderList(song).createSong(true);
+    })
+  };
 
-  }
+  getPlaylist(id) {
+    fetch(`https://kaju-music.herokuapp.com/playlists/${id}`).then(response => response.json()).then(data => {
+      const playlist = data.playlist;
+      playlist.songs.forEach(id => {
+        this.getSong(id);
+      })
+    })
+  };
 
-  setTitle(title) {
-    this.title = title;
-    let paintTitle = '';
-    const divTilte = document.querySelector('.js--title');
-    paintTitle = `<h3 id="favorites" class="cursor">${this.title}</h3>`;
-    divTilte.innerHTML = paintTitle;
-  }
+  getPlaylists() {
+    fetch(`https://kaju-music.herokuapp.com/playlists/${this.userId}`).then(response => response.json()).then(data => {
+
+      const playlists = data.data;
+      playlists.forEach(playlists => {
+        new BuilderList(data).createTitle(playlists.name, playlists._id);
+      });
+    })
+  };
 
   editePlaylist() { }
   deletePlaylist() { }

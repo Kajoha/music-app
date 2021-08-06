@@ -1,23 +1,24 @@
 import Musiclist from './modules/musiclist.js';
+import Playlist from './modules/playlist.js';
 import User from './modules/UserName.js';
 
-const getEspecificUser = localStorage.getItem('UserId');
+const userId = localStorage.getItem('UserId');
 const profile = document.querySelector('.js-account');
 
-function changenameDom(){
-  fetch(`https://kaju-music.herokuapp.com/user/${getEspecificUser}`, {
+function changenameDom() {
+  fetch(`https://kaju-music.herokuapp.com/user/${userId}`, {
     method: 'GET',
   })
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    const userDom = new User(data,null);
-    userDom.nameDOM();
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      const userDom = new User(data, null);
+      userDom.nameDOM();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 }
 
 function saveName(name) {
@@ -26,25 +27,25 @@ function saveName(name) {
   const currentUserName = {
     "name": `${name.innerHTML}`,
   };
-  const changeNameOfUser = new User(currentUserName,getEspecificUser);
+  const changeNameOfUser = new User(currentUserName, userId);
   changeNameOfUser.updateName();
 }
 
-function logoutUser(logoutButton){
-  if(logoutButton.classList.contains('js--logoutButton')){
+function logoutUser(logoutButton) {
+  if (logoutButton.classList.contains('js--logoutButton')) {
     localStorage.clear();
   }
 }
 
 profile.addEventListener('click', (e) => {
-  if(e.target.classList.contains('js--editName')){
+  if (e.target.classList.contains('js--editName')) {
     const UserName = document.querySelector('.account__userName--name');
-    if(!e.target.classList.contains('save')){
+    if (!e.target.classList.contains('save')) {
       e.target.innerHTML = 'Save name';
       UserName.setAttribute('contenteditable', 'true');
       UserName.style.borderBottom = '1px solid white';
     }
-    else{
+    else {
       UserName.style.borderBottom = 'none';
       e.target.innerHTML = 'Edit';
       saveName(UserName);
@@ -54,7 +55,7 @@ profile.addEventListener('click', (e) => {
   logoutUser(e.target);
 });
 
-const musiclist = new Musiclist();
+const musiclist = new Musiclist(userId);
 musiclist.getRecent();
 
 window.onload = function () {
@@ -63,7 +64,7 @@ window.onload = function () {
   Array.from(filters).forEach((element) => {
     element.addEventListener('click', (e) => {
       const filter = e.target.dataset.filter;
-      document.querySelector('.js--playlist').innerHTML = '';
+      document.querySelector('.js--musiclist').innerHTML = '';
       switch (filter) {
         case 'recently':
           musiclist.getRecent();
@@ -77,4 +78,18 @@ window.onload = function () {
     });
   });
 };
+
+const playlist = new Playlist(userId);
+playlist.getPlaylists();
+
+function listSongs() {
+  document.addEventListener('click', (event) => {
+    const clicElement = ((event.target).parentNode);
+    document.querySelector('.js--playlist').innerHTML = '';
+    const id = clicElement.getAttribute('data-id');
+    playlist.getPlaylist(id);
+  });
+}
+
+listSongs();
 changenameDom();

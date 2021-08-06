@@ -1,3 +1,5 @@
+import { songCreation } from "./canvas.js";
+
 export default class SongPlayer {
   previousButton = document.querySelector('.previousButton');
   nextButton = document.querySelector('.nextButton');
@@ -41,6 +43,7 @@ export default class SongPlayer {
     });
   }
 
+
   start(){
     controls.addEventListener('click', (e) => {
       if(e.target.classList.contains('playButton')){
@@ -54,5 +57,12 @@ export default class SongPlayer {
         e.target.classList.toggle('active');
       }
     });
+  }
+  currentSong(audio){
+    const music = document.querySelector('.music');
+    console.log('este es el songplayer',music)
+    music.setAttribute('src',`${audio}`);
+    music.load();
+    songCreation(music);
   }
 }

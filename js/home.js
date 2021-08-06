@@ -1,4 +1,4 @@
-import { loggedPerson, addPerson } from "./modules/form.js";
+import { loggedPerson, addPerson } from './modules/form.js';
 import LoadArtists from './modules/artists.js';
 
 const SingIn = document.querySelector('.js__select--signin');
@@ -40,14 +40,14 @@ SignInForm.addEventListener('submit', (e) => {
   const fieldsValidator = document.querySelector('.register__form--incompleteInfo');
   fieldsValidator.style.display = 'none';
   if (SignInForm.elements[0].value === '' || SignInForm.elements[1].value === ''
-      || SignInForm.elements[2].value === '' || SignInForm.elements[3].value === '') {
-      fieldsValidator.style.display = 'block';
+    || SignInForm.elements[2].value === '' || SignInForm.elements[3].value === '') {
+    fieldsValidator.style.display = 'block';
   } else {
     const inputs = {
       'name': `${SignInForm.elements[0].value}`,
       'email': `${SignInForm.elements[1].value}`,
-      'password': `${SignInForm.elements[2].value}`
-    }
+      'password': `${SignInForm.elements[2].value}`,
+    };
     SignInForm.elements[0].value = '';
     SignInForm.elements[1].value = '';
     SignInForm.elements[2].value = '';
@@ -57,20 +57,20 @@ SignInForm.addEventListener('submit', (e) => {
 });
 
 LoginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const inputs = {
-      'email': `${LoginForm.elements[0].value}`,
-      'password': `${LoginForm.elements[1].value}`
-    }
-    SignInForm.elements[0].value = '';
-    SignInForm.elements[1].value = '';
-    loggedPerson(inputs);
+  e.preventDefault();
+  const inputs = {
+    'email': `${LoginForm.elements[0].value}`,
+    'password': `${LoginForm.elements[1].value}`,
+  };
+  SignInForm.elements[0].value = '';
+  SignInForm.elements[1].value = '';
+  loggedPerson(inputs);
 });
 
 const apiArtists = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
 fetch(apiArtists).then((response) => response.json()).then((data) => {
   const loard = new LoadArtists(data);
-  loard.addArtists();
+  loard.addArtists(false);
 });
 
 function savedLocalStorage() {
@@ -82,5 +82,3 @@ function savedLocalStorage() {
 }
 
 savedLocalStorage();
-
-
