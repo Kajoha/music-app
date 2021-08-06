@@ -3,10 +3,8 @@ import { songCreation } from "./canvas.js";
 export default class SongPlayer {
   previousButton = document.querySelector('.previousButton');
   nextButton = document.querySelector('.nextButton');
-  musicTitle = document.querySelector('.music__player--title span');
   modal = document.querySelector('.modal');
   addButton = document.querySelector('.addPlaylist');
-  controls = document.querySelector('.musicPlayer__controls');
   constructor(musicController) {
     this.musicController = musicController;
   }
@@ -45,24 +43,28 @@ export default class SongPlayer {
 
 
   start(){
-    controls.addEventListener('click', (e) => {
-      if(e.target.classList.contains('playButton')){
-        if (e.target.classList.contains('active')) {
-          e.target.src = '../img/play-button.png';
-          song.pause();
+    const controls = document.querySelector('.playButton');
+    const music = document.querySelector('.music');
+    controls.addEventListener('click', () => {
+      if(controls.classList.contains('playButton')){
+        if (controls.classList.contains('stop')) {
+          controls.src = '../img/stop-button.png';
+          music.play();
         } else {
-          e.target.src = '../img/stop-button.png';
-          song.play();
+          controls.src = '../img/play-button.png';
+          music.pause();
         }
-        e.target.classList.toggle('active');
+        controls.classList.toggle('stop');
       }
     });
   }
-  currentSong(audio){
+  currentSong(audio,name){
+    const musicTitle = document.querySelector('.music__player--title span');
     const music = document.querySelector('.music');
-    console.log('este es el songplayer',music)
+    musicTitle.innerHTML = `${name}`;
     music.setAttribute('src',`${audio}`);
     music.load();
     songCreation(music);
+    this.start();
   }
 }

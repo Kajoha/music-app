@@ -14,7 +14,7 @@ export default class MusicPlayer {
           <img class=" img__cursor previousButton" src="./img/left-arrow.png" alt="previous-song-button">
         </button>
         <button class="button__playSong">
-          <img class="img__cursor playButton" src="./img/play-button.png" alt="play-button">
+          <img class="img__cursor playButton" src="./img/stop-button.png" alt="play-button">
         </button>
         <button class="button__nextSong ">
           <img class=" img__cursor nextButton" src="./img/right-arrow.png" alt="next-song-button">

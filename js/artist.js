@@ -38,10 +38,11 @@ window.onload = function () {
   playButton.addEventListener('click', (e) => {
     if(e.target.classList.contains('js--listening')){
       const audio = e.target.dataset.audio;
+      const musiName = e.target.dataset.name;
       const musicPlayer = new MusicPlayer();
       musicPlayer.controllers();
       const songPlayer = new SongPlayer();
-      songPlayer.currentSong(audio);
+      songPlayer.currentSong(audio,musiName);
     }
   })
 }
