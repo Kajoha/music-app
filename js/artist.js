@@ -1,6 +1,6 @@
 import LoadArtists from './modules/artists.js';
 import Musiclist from './modules/musiclist.js';
-import SongPlayer from './modules/SongPlayer.js';
+import SongPlayer from './modules/songPlayer.js';
 import MusicPlayer from './modules/playerBuilder.js';
 
 const nameArtist = localStorage.getItem('click');
@@ -36,7 +36,7 @@ musicArtist.getArtist(nameArtist);
 window.onload = function () {
   const playButton = document.querySelector('.js--musiclist');
   playButton.addEventListener('click', (e) => {
-    if(e.target.classList.contains('js--listening')){
+    if (e.target.classList.contains('js--listening')) {
       const audio = e.target.dataset.audio;
       const musicPlayer = new MusicPlayer();
       musicPlayer.controllers();

@@ -19,8 +19,12 @@
       </div>
       <div class="header__content--menu">
         <ul>
-          <a href="lastSong.html"><li>Home</li></a>
-          <a href="profile.html"><li>My account</li></a>
+          <a href="lastSong.html">
+            <li>Home</li>
+          </a>
+          <a href="profile.html">
+            <li>My account</li>
+          </a>
         </ul>
       </div>
     </div>
@@ -35,19 +39,20 @@
       <ul class="musicList__song js--musiclist"></ul>
     </div>
   </div>
+
   <div class="music__player--background">
     <div class="music__player wrapper">
       <div class="music__player--canvas">
         <canvas id="musicPlayerCanvas" width="500px" height="100px"></canvas>
       </div>
       <div class="musicPlayer__controls">
+        <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
       </div>
     </div>
   </div>
   <div class="modal js--modal"></div>
 
-  <script src="js/canvas.js" type="module"></script>
-
+  <script src="js/music.js" type="module"></script>
   <script type="module" src="js/artist.js"></script>
 </body>
 

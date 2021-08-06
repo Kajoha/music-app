@@ -1,6 +1,6 @@
 import Musiclist from './modules/musiclist.js';
 import Playlist from './modules/playlist.js';
-import User from './modules/UserName.js';
+import User from './modules/userName.js';
 
 const userId = localStorage.getItem('UserId');
 const profile = document.querySelector('.js-account');

@@ -1,6 +1,5 @@
 import LoadArtists from './modules/artists.js';
-import User from './modules/UserName.js';
-import MusicPlayer from './modules/playerBuilder.js';
+import User from './modules/userName.js';
 
 const LastSongButton = document.querySelector('.lastSong__player--button img');
 const userIdStorage = localStorage.getItem('UserId');;
@@ -13,7 +12,7 @@ function ActualUserName() {
       return response.json();
     })
     .then((data) => {
-      const actualUser = new User(data,null);
+      const actualUser = new User(data, null);
       actualUser.UserHomeName();
     })
     .catch((error) => {
@@ -27,11 +26,4 @@ fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists').t
 });
 
 ActualUserName();
-/*
-function lastSong(ActualSong){
-  LastSongButton.dataset.audio = ActualSong.audio;
-}
 
-lastSong();
-
-*/
