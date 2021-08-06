@@ -35,10 +35,3 @@ function lastSong(ActualSong){
 lastSong();
 
 */
-
-const playButton = document.querySelector('.js--listening');
-playButton.addEventListener('click', () => {
-  const play = new MusicPlayer();
-  play.controllers();
-  play.addingPlaylists();
-})

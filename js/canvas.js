@@ -1,33 +1,13 @@
-import SongPlayer from '../js/modules/SongPlayer.js';
 const canvas = document.getElementById('musicPlayerCanvas');
+const playButton = document.querySelector('.js--listening');
 const ctx = canvas.getContext('2d');
 const width = canvas.width;
 const height = canvas.height;
-const music = document.querySelector('.music');
-const playButton = document.querySelector('.musicPlayer__controls');
-let musicController = 3;
 
-fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/aurora', {
-	method: "GET"
+playButton.addEventListener('click',() => {
+  const actualSong = playButton.data.audio;
+  songCreation(actualSong);
 })
-	.then((response) => {
-	if (!response.ok) {
-		throw new Error("Network response was not ok " + response.status);
-	}
-	return response.json();
-	})
-	.then((data) => {
-    songs(data);
-	})
-	.catch((error) => {
-	console.log("error", error);
-	});
-
-function songs(data){
-	music.src = data[musicController].audio;
-	music.load();
-  start(music);
-}
 
 function songCreation(audio) {
   const context = new AudioContext(); 
@@ -61,23 +41,4 @@ function songCreation(audio) {
 }
 
 
-function start(song) {
-  playButton.addEventListener('click', (e) => {
-    songCreation(song);
-    if(e.target.classList.contains('playButton')){
-      if (e.target.classList.contains('active')) {
-        e.target.src = '../img/play-button.png';
-        song.pause();
-      } else {
-        e.target.src = '../img/stop-button.png';
-        song.play();
-      }
-      e.target.classList.toggle('active');
-    }
-  });
-}
 
-const SongsList = new SongPlayer(data,musicController);
-SongsList.addPlaylistModal();
-SongsList.previous();
-SongsList.next();
