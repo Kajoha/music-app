@@ -2,11 +2,11 @@ import Musiclist from './modules/musiclist.js';
 import Playlist from './modules/playlist.js';
 import User from './modules/UserName.js';
 
-const getEspecificUser = localStorage.getItem('UserId');
+const userId = localStorage.getItem('UserId');
 const profile = document.querySelector('.js-account');
 
 function changenameDom() {
-  fetch(`https://kaju-music.herokuapp.com/user/${getEspecificUser}`, {
+  fetch(`https://kaju-music.herokuapp.com/user/${userId}`, {
     method: 'GET',
   })
     .then((response) => {
@@ -27,7 +27,7 @@ function saveName(name) {
   const currentUserName = {
     "name": `${name.innerHTML}`,
   };
-  const changeNameOfUser = new User(currentUserName, getEspecificUser);
+  const changeNameOfUser = new User(currentUserName, userId);
   changeNameOfUser.updateName();
 }
 
@@ -55,7 +55,7 @@ profile.addEventListener('click', (e) => {
   logoutUser(e.target);
 });
 
-const musiclist = new Musiclist();
+const musiclist = new Musiclist(userId);
 musiclist.getRecent();
 
 window.onload = function () {
@@ -79,7 +79,7 @@ window.onload = function () {
   });
 };
 
-const playlist = new Playlist();
+const playlist = new Playlist(userId);
 playlist.getPlaylists();
 
 function listSongs() {

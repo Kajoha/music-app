@@ -3,7 +3,8 @@ import BuilderList from "./builderList.js";
 export default class Playlist {
   songs = [];
 
-  constructor() {
+  constructor(userid) {
+    this.userId = userid;
   }
 
   getSong(id) {
@@ -23,6 +24,7 @@ export default class Playlist {
 
   getPlaylists() {
     fetch('https://kaju-music.herokuapp.com/playlists?userId=61045361ea616b0015b9ae86').then(response => response.json()).then(data => {
+      //`https://kaju-music.herokuapp.com/playlists/${id}`
       const playlists = data.data;
       playlists.forEach(playlists => {
         new BuilderList(data).createTitle(playlists.name, playlists._id);

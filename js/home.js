@@ -82,5 +82,3 @@ function savedLocalStorage() {
 }
 
 savedLocalStorage();
-
-

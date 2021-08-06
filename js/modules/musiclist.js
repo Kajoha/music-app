@@ -3,7 +3,8 @@ import BuilderList from './builderList.js';
 export default class Musiclist {
   songs = [];
 
-  constructor() {
+  constructor(userid) {
+    this.userId = userid;
   }
 
   getSong(id) {
@@ -13,7 +14,7 @@ export default class Musiclist {
   }
 
   getRecent() {
-    fetch('https://kaju-music.herokuapp.com/recent?userId=61045361ea616b0015b9ae86').then(response => response.json()).then(data => {
+    fetch(`https://kaju-music.herokuapp.com/recent/${this.userId}`).then(response => response.json()).then(data => {
       const recents = data.data;
       recents.forEach(id => {
         this.getSong(id);
@@ -22,7 +23,7 @@ export default class Musiclist {
   };
 
   getFavorites() {
-    fetch('https://kaju-music.herokuapp.com/favorite?userId=61045361ea616b0015b9ae86').then(response => response.json()).then(data => {
+    fetch(`https://kaju-music.herokuapp.com/favorite/${this.userId}`).then(response => response.json()).then(data => {
       const recents = data.data;
       recents.forEach(id => {
         this.getSong(id);

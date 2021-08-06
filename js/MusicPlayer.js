@@ -57,3 +57,4 @@ const SongsList = new SongPlayer();
 SongsList.addPlaylistModal();
 SongsList.previous();
 SongsList.next();
+
