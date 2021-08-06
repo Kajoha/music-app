@@ -31,7 +31,7 @@
       </div>
     <div class="lastSong__player">
       <div class="lastSong__player--button">
-        <img data-audio="" class="cursor js__listening" src="./img/play-button.png" alt="Play Button">
+        <img data-audio="" class="cursor js--listening" src="./img/play-button.png" alt="Play Button">
       </div>
     </div>
   </div>
@@ -43,10 +43,25 @@
         </div>
       </div>
   </div>
+
+  <div class="music__player--background">
+    <div class="music__player wrapper">
+      <div class="music__player--canvas">
+        <canvas id="musicPlayerCanvas" width="500px" height="100px"></canvas>
+      </div>
+      <div class="musicPlayer__controls">
+        <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
+      </div>
+    </div>
+  </div>
+  <div class="modal js--modal"></div>
+
   <div class="bottom">
     <p class="bottom__text">
       Copyright © Ignacio & Karen
     </p>
   </div>
+  <script type="module" src="js/music.js"></script>
+
   <script type="module" src="js/lastSong.js"></script>
 </body>

@@ -4,7 +4,6 @@ export default class SongPlayer {
   musicTitle = document.querySelector('.music__player--title span');
   modal = document.querySelector('.modal');
   addButton = document.querySelector('.addPlaylist');
-  buttonPlayer = document.querySelectorAll('.js__listening');
 
   constructor(arrayOfSongs, musicController) {
     this.musicController = musicController;
@@ -40,16 +39,6 @@ export default class SongPlayer {
       }
       console.log(this.data[this.musicController].audio);
       this.musicTitle.innerHTML = this.data[this.musicController].name;
-    });
-  }
-
-  currentSong() {
-    this.buttonPlayer.addEventListener('click', (data) => {
-      musicController = data.songid;
-      const musicName = data.name;
-      music.src = data.audio;
-      music.load();
-      start(music);
     });
   }
 }
