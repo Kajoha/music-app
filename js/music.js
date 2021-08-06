@@ -1,43 +1,32 @@
-let canvas = document.getElementById("musicPlayerCanvas");
-let ctx = canvas.getContext("2d");
-let width = canvas.width;
-let height = canvas.height;
-const previousButton = document.querySelector('.previousButton')
-const playButton = document.querySelector('.playButton')
-const nextButton = document.querySelector('.nextButton')
-let music = document.querySelector('.music');
-let musicTitle = document.querySelector('.music__player--title span');
-let musicController = 0;
+import SongPlayer from '../js/modules/SongPlayer.js';
+const canvas = document.getElementById('musicPlayerCanvas');
+const ctx = canvas.getContext('2d');
+const width = canvas.width;
+const height = canvas.height;
+const music = document.querySelector('.music');
+const playButton = document.querySelector('.musicPlayer__controls');
+let musicController = 3;
 
-const MusicApi = () => {
-  fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/aurora', {
-    method: "GET"
+fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/aurora', {
+  method: "GET"
+})
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.status);
+    }
+    return response.json();
   })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.status);
-      }
+  .then((data) => {
+    songs(data);
+  })
+  .catch((error) => {
+    console.log("error", error);
+  });
 
-      return response.json();
-    })
-    .then((data) => {
-      song(data[2].audio)
-      previousSong(data);
-      nextSong(data);
-    })
-    .catch((error) => {
-      console.log("error", error);
-    });
-};
-
-MusicApi()
-
-
-function song(data) {
-  music.src = data;
-  music.crossOrigin = "anonymous";
+function songs(data) {
+  music.src = data[musicController].audio;
   music.load();
-  PlaySong(music);
+  start(music);
 }
 
 function songCreation(audio) {
@@ -70,41 +59,25 @@ function songCreation(audio) {
   }
   songAnimation()
 }
-function previousSong(data) {
-  previousButton.addEventListener('click', () => {
-    playButton.src = '../img/stop-button.png';
-    musicController--;
-    if (musicController < 0) {
-      musicController = data.length - 1;
-    }
-    console.log('next', data[musicController].audio);
-    song(data[musicController].audio);
-  })
-}
 
 
-function PlaySong(song) {
+function start(song) {
   playButton.addEventListener('click', (e) => {
-    songCreation(song)
-    if (e.target.classList.contains('active')) {
-      playButton.src = '../img/play-button.png';
-      song.pause();
-    } else {
-      playButton.src = '../img/stop-button.png';
-      song.play();
+    songCreation(song);
+    if (e.target.classList.contains('playButton')) {
+      if (e.target.classList.contains('active')) {
+        e.target.src = '../img/play-button.png';
+        song.pause();
+      } else {
+        e.target.src = '../img/stop-button.png';
+        song.play();
+      }
+      e.target.classList.toggle('active');
     }
-    e.target.classList.toggle('active');
-  })
+  });
 }
 
-function nextSong(data) {
-  nextButton.addEventListener('click', () => {
-    playButton.src = '../img/play-button.png';
-    musicController++;
-    if (musicController > data.length - 1) {
-      musicController = 0;
-    }
-    console.log('next', data[musicController].audio);
-    song(data[musicController].audio);
-  })
-}
+const SongsList = new SongPlayer(data, musicController);
+SongsList.addPlaylistModal();
+SongsList.previous();
+SongsList.next();

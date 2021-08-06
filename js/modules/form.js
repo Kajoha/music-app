@@ -30,6 +30,12 @@ function addPerson(inputs) {
       'Content-Type': 'application/json'
     },
   })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      statusSignIn(data);
+    })
     .catch((error) => {
       console.error('Error:', error);
     });
@@ -43,6 +49,12 @@ function loggedPerson(UserInfo) {
       "Content-Type": "application/json"
     },
   })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      statusLogIn(data);
+    })
     .catch((error) => {
       console.error('Error:', error);
     });

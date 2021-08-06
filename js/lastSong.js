@@ -1,5 +1,6 @@
 import LoadArtists from './modules/artists.js';
 import User from './modules/UserName.js';
+import MusicPlayer from './modules/playerBuilder.js';
 
 const LastSongButton = document.querySelector('.lastSong__player--button img');
 const userIdStorage = localStorage.getItem('UserId');;
@@ -34,3 +35,10 @@ function lastSong(ActualSong){
 lastSong();
 
 */
+
+const playButton = document.querySelector('.js--listening');
+playButton.addEventListener('click', () => {
+  const play = new MusicPlayer();
+  play.controllers();
+  play.addingPlaylists();
+})
