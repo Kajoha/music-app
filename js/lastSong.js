@@ -3,7 +3,7 @@ import User from './modules/UserName.js';
 import MusicPlayer from './modules/playerBuilder.js';
 
 const LastSongButton = document.querySelector('.lastSong__player--button img');
-const userIdStorage = localStorage.getItem('UserId');;
+const userIdStorage = localStorage.getItem('UserId');
 
 function ActualUserName() {
   fetch(`https://kaju-music.herokuapp.com/user/${userIdStorage}`, {
@@ -27,11 +27,10 @@ fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists').t
 });
 
 ActualUserName();
-/*
+
 function lastSong(ActualSong){
-  LastSongButton.dataset.audio = ActualSong.audio;
+  let currentSound = ActualSong.songs[0].audio;
+  LastSongButton.dataset.audio = currentSound;
 }
 
-lastSong();
-
-*/
+export {lastSong};

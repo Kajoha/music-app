@@ -33,8 +33,17 @@ fetch(apiArtists).then((response) => response.json()).then((data) => {
 const musicArtist = new Musiclist();
 musicArtist.getArtist(nameArtist);
 
+function hearthAnimation(currentSongOfList){
+  currentSongOfList.addEventListener('click', (e) => {
+    if(e.target.classList.contains('musicList__like--hearth')){
+      e.target.classList.toggle('is-active');
+    }
+  })
+}
+
 window.onload = function () {
   const playButton = document.querySelector('.js--musiclist');
+  hearthAnimation(playButton);
   playButton.addEventListener('click', (e) => {
     if(e.target.classList.contains('js--listening')){
       const audio = e.target.dataset.audio;

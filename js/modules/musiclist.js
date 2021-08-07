@@ -1,4 +1,5 @@
 import BuilderList from './builderList.js';
+import { lastSong } from '../lastSong.js';
 
 export default class Musiclist {
   songs = [];
@@ -16,6 +17,7 @@ export default class Musiclist {
   getRecent() {
     fetch(`https://kaju-music.herokuapp.com/recent/${this.userId}`).then(response => response.json()).then(data => {
       const recents = data.data;
+      lastSong(data.data);
       recents.forEach(id => {
         this.getSong(id);
       })

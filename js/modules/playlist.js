@@ -24,7 +24,6 @@ export default class Playlist {
 
   getPlaylists() {
     fetch(`https://kaju-music.herokuapp.com/playlists/${this.userId}`).then(response => response.json()).then(data => {
-
       const playlists = data.data;
       playlists.forEach(playlists => {
         new BuilderList(data).createTitle(playlists.name, playlists._id);

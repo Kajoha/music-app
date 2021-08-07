@@ -1,4 +1,5 @@
 import { songCreation } from "./canvas.js";
+import { lastSong } from "../lastSong.js";
 
 export default class SongPlayer {
   previousButton = document.querySelector('.previousButton');
