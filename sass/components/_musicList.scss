@@ -26,12 +26,16 @@
   position: absolute;
 }
 
+.musicList__items--delete{
+  right: 0;
+}
+
 .musicList__items--like {
-  right: 3rem;
+  right: 4rem;
 }
 
 .musicList__items--play {
-  right: 8rem;
+  right: 9rem;
 }
 
 .musicList__play--img {

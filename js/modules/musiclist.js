@@ -7,17 +7,13 @@ export default class Musiclist {
     this.userId = userid;
   }
 
-  getSong(id) {
-    fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/${id}`).then(response => response.json()).then(song => {
-      new BuilderList(song).createSong(false);
-    })
-  }
-
   getRecent() {
     fetch(`https://kaju-music.herokuapp.com/recent?userId=${this.userId}`).then(response => response.json()).then(data => {
       const recents = data.data;
       recents.forEach(id => {
-        this.getSong(id);
+        fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/${id}`).then(response => response.json()).then(song => {
+          new BuilderList(song).createSong(false, false);
+        })
       })
     });
   };
@@ -26,7 +22,9 @@ export default class Musiclist {
     fetch(`https://kaju-music.herokuapp.com/favorite?userId=${this.userId}`).then(response => response.json()).then(data => {
       const recents = data.data;
       recents.forEach(id => {
-        this.getSong(id);
+        fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/${id}`).then(response => response.json()).then(song => {
+          new BuilderList(song).createSong(false, true);
+        })
       });
     })
   };
@@ -36,7 +34,7 @@ export default class Musiclist {
     fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/${idArtist}`).then((response) => response.json()).then((data) => {
       const artist = data;
       artist.forEach(song => {
-        new BuilderList(song).createSong(false);
+        new BuilderList(song).createSong(false, false);
       });
     });
   };

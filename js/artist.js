@@ -2,7 +2,9 @@ import LoadArtists from './modules/artists.js';
 import Musiclist from './modules/musiclist.js';
 import SongPlayer from './modules/songPlayer.js';
 import MusicPlayer from './modules/playerBuilder.js';
+import Interaction from './modules/songIteraction.js';
 
+const userId = localStorage.getItem('UserId');
 const nameArtist = localStorage.getItem('click');
 const apiArtists = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
 
@@ -40,6 +42,7 @@ function savedLocalStorage() {
 
 savedLocalStorage();
 
+const interaction = new Interaction(userId);
 const musicArtist = new Musiclist();
 musicArtist.getArtist(nameArtist);
 
@@ -52,6 +55,10 @@ window.onload = function () {
       musicPlayer.controllers();
       const songPlayer = new SongPlayer();
       songPlayer.currentSong(audio);
+    }
+    if (e.target.classList.contains('js--like')) {
+      const song = e.target.dataset.id;
+      interaction.addFavorite(song);
     }
   });
 };

@@ -3,6 +3,7 @@ import Playlist from './modules/playlist.js';
 import User from './modules/userName.js';
 import SongPlayer from './modules/songPlayer.js';
 import MusicPlayer from './modules/playerBuilder.js';
+import Interaction from './modules/songIteraction.js';
 
 const userId = localStorage.getItem('UserId');
 const profile = document.querySelector('.js-account');
@@ -57,7 +58,6 @@ musiclist.getRecent();
 
 window.onload = function () {
   const filters = document.getElementsByClassName('js--musicList');
-
   Array.from(filters).forEach((element) => {
     element.addEventListener('click', (e) => {
       const filter = e.target.dataset.filter;
@@ -75,7 +75,9 @@ window.onload = function () {
     });
   });
 
+  const interaction = new Interaction(userId);
   const playButton = document.querySelector('.js--playSong');
+
   playButton.addEventListener('click', (e) => {
     if (e.target.classList.contains('js--listening')) {
       const audio = e.target.dataset.audio;
@@ -83,6 +85,16 @@ window.onload = function () {
       musicPlayer.controllers();
       const songPlayer = new SongPlayer();
       songPlayer.currentSong(audio);
+    }
+    if (e.target.classList.contains('js--like')) {
+      const song = e.target.dataset.id;
+      interaction.addFavorite(song);
+    }
+    if (e.target.classList.contains('js--unlike')) {
+      const song = e.target.dataset.id;
+      interaction.removeFavorite(song);
+      document.querySelector('.js--musiclist').innerHTML = '';
+      musiclist.getFavorites();
     }
   });
 };
@@ -96,7 +108,34 @@ function listSongs() {
     const clicElement = ((event.target).parentNode);
     document.querySelector('.js--playlist').innerHTML = '';
     const id = clicElement.getAttribute('data-id');
-    playlist.getPlaylist(id);
+    if (event.target.classList.contains('js--songs')) {
+      playlist.getPlaylist(id);
+    }
+    if (event.target.classList.contains('js--deleteList')) {
+      playlist.deletePlaylist(id);
+    }
+
+    const interaction = new Interaction(userId);
+    const play = document.querySelector('.js--playlist');
+    play.addEventListener('click', (e) => {
+      if (e.target.classList.contains('js--listening')) {
+        const audio = e.target.dataset.audio;
+        const musicPlayer = new MusicPlayer();
+        musicPlayer.controllers();
+        const songPlayer = new SongPlayer();
+        songPlayer.currentSong(audio);
+      }
+      if (e.target.classList.contains('js--like')) {
+        const song = e.target.dataset.id;
+        interaction.addFavorite(song);
+      }
+      if (e.target.classList.contains('js--delete')) {
+        const song = e.target.dataset.id;
+        interaction.removeSongPlaylist(id, song);
+        document.querySelector('.js--playlist').innerHTML = '';
+        playlist.getPlaylist(id);
+      }
+    });
   });
 }
 

@@ -65,11 +65,14 @@ h1 {
   bottom: 1rem;
   position: absolute; }
 
+.musicList__items--delete {
+  right: 0; }
+
 .musicList__items--like {
-  right: 3rem; }
+  right: 4rem; }
 
 .musicList__items--play {
-  right: 8rem; }
+  right: 9rem; }
 
 .musicList__play--img {
   height: 4rem;
@@ -401,7 +404,7 @@ h1 {
   right: 14rem; }
 
 .playlist__items--delete {
-  right: 3rem; }
+  right: 4.5rem; }
 
 .right__style {
   background-image: url("./../../img/headset.png");

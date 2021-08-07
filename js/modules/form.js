@@ -2,7 +2,7 @@ function statusLogIn(data) {
   const statusofLogIn = document.querySelector('.js--passwordIncorrect');
   statusofLogIn.innerHTML = '';
   if (data.Userdata === true) {
-    statusofLogIn.innerHTML = ' The email is not associated with a user'
+    statusofLogIn.innerHTML = ' The email is not associated with a user';
   } else if (data.Userdata === false) {
     statusofLogIn.innerHTML = 'The password is not correct';
   } else {
