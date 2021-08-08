@@ -4,10 +4,10 @@ import SongPlayer from './modules/songPlayer.js';
 import MusicPlayer from './modules/playerBuilder.js';
 
 const LastSongButton = document.querySelector('.lastSong__player--button img');
-const userIdStorage = localStorage.getItem('UserId');
+const userId = localStorage.getItem('UserId');
 
 function ActualUserName() {
-  fetch(`https://kaju-music.herokuapp.com/user/${userIdStorage}`, {
+  fetch(`https://kaju-music.herokuapp.com/user/${userId}`, {
     method: 'GET',
   })
     .then((response) => response.json())
@@ -45,3 +45,12 @@ window.onload = function () {
   savedLocalStorage();
 };
 
+fetch(`https://kaju-music.herokuapp.com/recent?userId=${userId}`).then((response) => response.json()).then((data) => {
+  const recents = data.data;
+  const id = recents[0];
+
+  fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/${id}`).then((response) => response.json()).then((song) => {
+    const currentSound = song.audio;
+    LastSongButton.dataset.audio = currentSound;
+  });
+});

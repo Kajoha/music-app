@@ -10,6 +10,7 @@ export default class Musiclist {
   getRecent() {
     fetch(`https://kaju-music.herokuapp.com/recent?userId=${this.userId}`).then(response => response.json()).then(data => {
       const recents = data.data;
+      console.log(recents[0])
       recents.forEach(id => {
         fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/${id}`).then(response => response.json()).then(song => {
           new BuilderList(song).createSong(false, false);
