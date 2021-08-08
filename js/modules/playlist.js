@@ -7,17 +7,17 @@ export default class Playlist {
     this.userId = userid;
   }
 
-  getSong(id) {
+  getSong(id, index) {
     fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/${id}`).then(response => response.json()).then(song => {
-      new BuilderList(song).createSong(true, false);
+      new BuilderList(song).createSong(true, false, index);
     })
   };
 
   getPlaylist(id) {
     fetch(`https://kaju-music.herokuapp.com/playlists/${id}`).then(response => response.json()).then(data => {
       const playlist = data.playlist;
-      playlist.songs.forEach(id => {
-        this.getSong(id);
+      playlist.songs.forEach((id, index) => {
+        this.getSong(id, index);
       })
     })
   };

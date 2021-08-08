@@ -1,8 +1,6 @@
 import { songCreation } from "./canvas.js";
 
 export default class SongPlayer {
-  previousButton = document.querySelector('.previousButton');
-  nextButton = document.querySelector('.nextButton');
   modal = document.querySelector('.modal');
   addButton = document.querySelector('.addPlaylist');
 
@@ -20,26 +18,36 @@ export default class SongPlayer {
     });
   }
 
-  previous(data) {
-    this.previousButton.addEventListener('click', () => {
-      this.musicController -= 1;
-      if (this.musicController < 0) {
-        this.musicController = data.length - 1;
+  previous() {
+    const _currentSong = localStorage['currentSong'];
+    let currentSong = null;
+    if (_currentSong) currentSong = parseInt(_currentSong)
+
+    if (currentSong) {
+      const currentListening = document.getElementById(`song-${currentSong - 1}`)
+      if (currentListening) {
+        const name = currentListening.dataset.name;
+        const audio = currentListening.dataset.audio;
+        localStorage['currentSong'] = currentSong - 1;
+        this.currentSong(audio, name)
       }
-      console.log(data[this.musicController].audio);
-      this.musicTitle.innerHTML = data[this.musicController].name;
-    });
+    }
   }
 
-  next(data) {
-    this.nextButton.addEventListener('click', () => {
-      this.musicController += 1;
-      if (this.musicController > data.length - 1) {
-        this.musicController = 0;
+  next() {
+    const _currentSong = localStorage['currentSong'];
+    let currentSong = null;
+    if (_currentSong) currentSong = parseInt(_currentSong)
+
+    if (currentSong) {
+      const currentListening = document.getElementById(`song-${currentSong + 1}`)
+      if (currentListening) {
+        const name = currentListening.dataset.name;
+        const audio = currentListening.dataset.audio;
+        localStorage['currentSong'] = currentSong + 1;
+        this.currentSong(audio, name)
       }
-      console.log(data[this.musicController].audio);
-      this.musicTitle.innerHTML = data[this.musicController].name;
-    });
+    }
   }
 
   start() {

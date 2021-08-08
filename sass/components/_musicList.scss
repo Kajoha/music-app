@@ -6,6 +6,7 @@
 }
 
 .musicList__item {
+  align-items: center;
   border-bottom: .1rem solid $green;
   display: flex;
   justify-content: space-between;
@@ -38,6 +39,30 @@
   right: 9rem;
 }
 
+.musicList__like--hearth{
+  border: none;
+  height: 4.5rem;
+  width: 4rem;
+  opacity: 1;
+  &.is-active {
+    animation: hearth-animation 1.5s ease-in-out;
+  }
+}
+
+@keyframes hearth-animation {
+  15%{
+    transform: scale(1.2);
+  }
+  30%{
+    transform: scale(0.95);
+  }
+  45%,
+  80%{
+    transform: scale(1);
+  }
+}
+
+
 .musicList__play--img {
   height: 4rem;
   width: 4rem;
@@ -55,6 +80,10 @@
   margin-top: 1rem;
   left: 8rem;
   position: absolute;
+}
+
+.musicList__p{
+  margin-top: auto;
 }
 
 .musicList__text--album{

@@ -46,8 +46,17 @@ const interaction = new Interaction(userId);
 const musicArtist = new Musiclist();
 musicArtist.getArtist(nameArtist);
 
+function hearthAnimation(currentSongOfList) {
+  currentSongOfList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('musicList__like--hearth')) {
+      e.target.classList.toggle('is-active');
+    }
+  });
+}
+
 window.onload = function () {
   const playButton = document.querySelector('.js--musiclist');
+  hearthAnimation(playButton);
   playButton.addEventListener('click', (e) => {
     if (e.target.classList.contains('js--listening')) {
       const audio = e.target.dataset.audio;
@@ -55,7 +64,7 @@ window.onload = function () {
       const musicPlayer = new MusicPlayer();
       musicPlayer.controllers();
       const songPlayer = new SongPlayer();
-      songPlayer.currentSong(audio,musiName);
+      songPlayer.currentSong(audio, musiName);
     }
     if (e.target.classList.contains('js--like')) {
       const song = e.target.dataset.id;

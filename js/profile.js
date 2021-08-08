@@ -53,6 +53,14 @@ profile.addEventListener('click', (e) => {
   logoutUser(e.target);
 });
 
+function hearthAnimation(currentSongOfList) {
+  currentSongOfList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('musicList__like--hearth')) {
+      e.target.classList.toggle('is-active');
+    }
+  });
+}
+
 const playlist = new Playlist(userId);
 playlist.getPlaylists();
 
@@ -81,11 +89,24 @@ const songPlayer = new SongPlayer();
 
 function buttonMusicList() {
   const playButton = document.querySelector('.js--playSong');
+  hearthAnimation(playButton);
   playButton.addEventListener('click', (e) => {
     if (e.target.classList.contains('js--listening')) {
+      localStorage['currentSong'] = e.target.dataset.index;
+      const musicName = e.target.dataset.name;
       const audio = e.target.dataset.audio;
       musicPlayer.controllers();
-      songPlayer.currentSong(audio);
+      songPlayer.currentSong(audio, musicName);
+
+      const next = document.querySelector('.nextButton');
+      next.addEventListener('click', () => {
+        songPlayer.next();
+      });
+
+      const previous = document.querySelector('.previousButton');
+      previous.addEventListener('click', () => {
+        songPlayer.previous();
+      });
     }
     if (e.target.classList.contains('js--like')) {
       const song = e.target.dataset.id;
@@ -95,15 +116,15 @@ function buttonMusicList() {
       const song = e.target.dataset.id;
       interaction.removeFavorite(song);
       document.querySelector('.js--musiclist').innerHTML = '';
-      musiclist.getFavorites();
+      setTimeout(() => {
+        musiclist.getFavorites();
+      }, 1000);
     }
   });
 }
 
 function buttonPlaylist() {
   const list = document.querySelector('.js--title');
-  const hijos = list.children;
-  console.log(hijos)
   list.addEventListener('click', (event) => {
     const clicElement = ((event.target).parentNode);
     document.querySelector('.js--playlist').innerHTML = '';
@@ -116,15 +137,31 @@ function buttonPlaylist() {
     }
 
     const play = document.querySelector('.js--playlist');
+    hearthAnimation(play);
     play.addEventListener('click', (e) => {
       if (e.target.classList.contains('js--listening')) {
         const audio = e.target.dataset.audio;
+        localStorage['currentSong'] = e.target.dataset.index;
         musicPlayer.controllers();
         songPlayer.currentSong(audio);
+
+        const next = document.querySelector('.nextButton');
+        next.addEventListener('click', () => {
+          songPlayer.next();
+        });
+
+        const previous = document.querySelector('.previousButton');
+        previous.addEventListener('click', () => {
+          songPlayer.previous();
+        });
       }
       if (e.target.classList.contains('js--like')) {
         const song = e.target.dataset.id;
         interaction.addFavorite(song);
+        document.querySelector('.js--musiclist').innerHTML = '';
+        setTimeout(() => {
+          musiclist.getFavorites();
+        }, 1500);
       }
       if (e.target.classList.contains('js--delete')) {
         const song = e.target.dataset.id;

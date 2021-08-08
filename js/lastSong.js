@@ -3,6 +3,7 @@ import User from './modules/userName.js';
 import SongPlayer from './modules/songPlayer.js';
 import MusicPlayer from './modules/playerBuilder.js';
 
+const LastSongButton = document.querySelector('.lastSong__player--button img');
 const userIdStorage = localStorage.getItem('UserId');
 
 function ActualUserName() {
@@ -32,8 +33,6 @@ function savedLocalStorage() {
   });
 }
 
-savedLocalStorage();
-
 window.onload = function () {
   const playButton = document.querySelector('.js--listening');
   playButton.addEventListener('click', (e) => {
@@ -43,4 +42,6 @@ window.onload = function () {
     const songPlayer = new SongPlayer();
     songPlayer.currentSong(audio);
   });
+  savedLocalStorage();
 };
+
