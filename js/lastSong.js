@@ -37,10 +37,11 @@ window.onload = function () {
   const playButton = document.querySelector('.js--listening');
   playButton.addEventListener('click', (e) => {
     const audio = e.target.dataset.audio;
+    const name =  e.target.dataset.name;
     const musicPlayer = new MusicPlayer();
     musicPlayer.controllers();
     const songPlayer = new SongPlayer();
-    songPlayer.currentSong(audio);
+    songPlayer.currentSong(audio,name);
   });
   savedLocalStorage();
 };
@@ -50,7 +51,7 @@ fetch(`https://kaju-music.herokuapp.com/recent?userId=${userId}`).then((response
   const id = recents[0];
 
   fetch(`https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/${id}`).then((response) => response.json()).then((song) => {
-    const currentSound = song.audio;
-    LastSongButton.dataset.audio = currentSound;
+    LastSongButton.dataset.audio = song.audio;
+    LastSongButton.dataset.name = song.name;
   });
 });
