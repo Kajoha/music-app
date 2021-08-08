@@ -1,0 +1,39 @@
+.header__content--menu{
+  ul{
+    display: flex;
+    justify-content: space-between;
+  }
+  a{
+    color: $white;
+    font-size: $typo-s;
+    margin-left: 4rem;
+    text-decoration: none;
+    :hover{
+      border-bottom: 2px solid $green;
+    }
+  }
+  li{
+    list-style: none;
+  }
+}
+
+.home__artist {
+  background-color: $lila;
+  width: 100%;
+}
+
+.home__flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.welcome__img {
+  display: block;
+  margin: 4rem 0 0 4rem;
+}
+
+.welcome__typo-green {
+  color: $green;
+  font-size: $typo-l;
+  margin: .7rem 0 2rem 0;
+}

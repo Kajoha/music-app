@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/logo.png">
+  <link rel="stylesheet" href="public/css/styles.css">
+  <link rel="icon" href="img/logo.png">
+  <title>Kaju - Profile</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__content">
+      <div class="header__content--logo">
+        <a href="lastSong.html"><img class=" img__cursor cursor" src="./img/logo.png" alt="Music-Logo"></a>
+      </div>
+      <div class="header__content--menu">
+        <ul>
+          <a href="profile.html">
+            <li>My account</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="right__style"></div>
+
+  <div class="wrapper home__flex profile">
+
+    <div id="Left">
+
+      <div class="account js-account">
+      </div>
+
+      <div class="musicList">
+        <div class="musicList__title">
+          <h3 class="recent musicList__title--active cursor js--musicList" data-filter="recently">Recently Played</h3>
+          <h3 class="favorite cursor js--musicList" data-filter="favorites">Your favorites</h3>
+        </div>
+        <div>
+          <ul class="musicList__song js--playSong js--musiclist"></ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="playList playlist__list">
+      <h2>Your Playlist</h2>
+      <ul class="playList__title js--title"></ul>
+      <ul class="js--playlist js--playSong"></ul>
+    </div>
+
+  </div>
+
+  <div class="music__player--background">
+    <div class="music__player wrapper">
+      <div class="music__player--canvas">
+        <canvas id="musicPlayerCanvas" width="500px" height="70px"></canvas>
+      </div>
+      <div class="musicPlayer__controls">
+        <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
+      </div>
+    </div>
+  </div>
+  <div class="modal js--modal"></div>
+
+  <script src="js/profile.js" type="module"></script>
+</body>
+
+</html>

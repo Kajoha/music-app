@@ -1,0 +1,44 @@
+.account__information{
+    border-bottom: .2rem solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #7A69E1, #5FAA6F);
+    border-width: .3rem;
+    display: inline-block;
+    padding-bottom: 1.5rem;
+}
+.account__logOut{
+    align-items: center;
+    border-bottom: .2rem solid $green;
+    display: flex;
+    font-size: $typo-m;
+    justify-content: space-between;
+    margin: 0rem 0 6rem 0;
+    width: 40rem;
+}
+.account__userName{
+    align-items: center;
+    border-bottom: .2rem solid;
+    border-color: $green;
+    display: flex;
+    justify-content: space-between;
+    margin: 6rem 0 3rem 0;
+    padding-bottom: 2.4rem;
+    width: 40rem;
+}
+
+.account__userName--name{
+    color: $white;
+    font-size: $typo-m;
+    margin: 0;
+}
+
+.account__userName--editName{
+    background-color: $lila;
+    border: none;
+    border-radius: .4rem;
+    color: $white;
+    &:hover{
+        background-color: rgb(85, 72, 161);
+    }
+    padding: .5rem 3rem;
+}

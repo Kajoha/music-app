@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/logo.png">
+  <link rel="stylesheet" href="public/css/styles.css">
+  <link rel="icon" href="img/logo.png">
+  <title>Kaju - Artists</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__content">
+      <div class="header__content--logo">
+        <a href="lastSong.html"><img class=" img__cursor cursor" src="./img/logo.png" alt="Music-Logo"></a>
+      </div>
+      <div class="header__content--menu">
+        <ul>
+          <a href="profile.html">
+            <li>My account</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrapper home__flex artist js--artist">
+  </div>
+
+  <div class="wrapper artist__songs home__flex">
+    <div class="artists__home js--artists"></div>
+    <div class="musicList artist__songs--list">
+      <ul class="musicList__song js--musiclist"></ul>
+    </div>
+  </div>
+
+  <div class="music__player--background">
+    <div class="music__player wrapper">
+      <div class="music__player--canvas">
+        <canvas id="musicPlayerCanvas" width="500px" height="70px"></canvas>
+      </div>
+      <div class="musicPlayer__controls">
+        <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
+      </div>
+    </div>
+  </div>
+  <div class="modal js--modal"></div>
+
+  <script type="module" src="js/artist.js"></script>
+</body>
+
+</html>

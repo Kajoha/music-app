@@ -1,0 +1,84 @@
+.artist {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+}
+
+.artists--artist {
+  padding-bottom: 10rem;
+}
+
+
+.artist__content {
+  margin: 5rem 7rem 0 12rem;
+}
+
+.artist__description {
+  font-size: $typo-s;
+}
+
+.artists__home {
+  margin: 3rem 0 2rem 0;
+  width: 50rem;
+}
+
+.artists__home--img {
+  border-radius: 50%;
+  margin-left: 2.5rem;
+  width: 12rem;
+}
+
+.artists__home--name {
+  a{
+    text-decoration: none;
+    color: $blue-main;
+    &:hover {
+      color: $white;
+    }
+  }
+  font-size: $typo-m;
+  text-align: center;
+}
+
+.artists__home--title {
+  h2 {
+    color: $blue-main;
+    font-size: 3.5rem;
+  }
+  margin: 8.5rem 7rem 0 0;
+  position: relative;
+}
+
+.artist__img {
+  margin-left: 12rem;
+  img {
+    border-radius: 50%;
+    width: 30rem;
+  }
+}
+
+.artists__inArtist {
+  margin: 3rem 0 2rem 18.5rem;
+  width: 20rem;
+}
+
+.artists__inArtist--name {
+  a{
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      color: $green;
+    }
+  }
+  font-size: $typo-m;
+  margin-left: 4rem;
+}
+
+.artist__songs {
+  position: relative;
+}
+
+.artist__songs--list {
+  position: absolute;
+  right: 7.5rem;
+}
+

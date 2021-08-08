@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/css/styles.css">
+  <link rel="icon" href="img/logo.png">
+  <title>Kaju - Home</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__content">
+      <div class="header__content--logo">
+        <a href="lastSong.html"><img class=" img__cursor cursor" src="./img/logo.png" alt="Music-Logo"></a>
+      </div>
+      <div class="header__content--menu">
+        <ul>
+          <a href="profile.html">
+            <li>My account</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="lastSong">
+    <div class="lastSong__user"></div>
+    <div class="lastSong__info">
+      <p class="lastSong__info--text"> Play your last song ?</p>
+    </div>
+    <div class="lastSong__player">
+      <div class="lastSong__player--button">
+        <img data-audio="" class="cursor js--listening" src="./img/play-button.png" alt="Play Button">
+      </div>
+    </div>
+  </div>
+
+  <div class="home__artist artists--artist">
+    <div class="wrapper home__flex">
+      <div class="artists__home home__flex js--artists"></div>
+      <div class="artists__home--title">
+        <h2>Your favorite artists</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="music__player--background">
+    <div class="music__player wrapper">
+      <div class="music__player--canvas">
+        <canvas id="musicPlayerCanvas" width="500px" height="70px"></canvas>
+      </div>
+      <div class="musicPlayer__controls">
+        <audio class="music" src="" type="audio/mp3" crossOrigin="anonymous"></audio>
+      </div>
+    </div>
+  </div>
+  <div class="modal js--modal"></div>
+
+  <script type="module" src="js/lastSong.js"></script>
+</body>
