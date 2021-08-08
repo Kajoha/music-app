@@ -58,6 +58,7 @@ export default class SongPlayer {
       }
     });
   }
+
   currentSong(audio, name) {
     const musicTitle = document.querySelector('.music__player--title span');
     const music = document.querySelector('.music');
