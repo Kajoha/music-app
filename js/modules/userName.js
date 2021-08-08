@@ -52,7 +52,7 @@ export default class User {
     const logOutRedirection = document.createElement('a');
     logOutRedirection.setAttribute('href', 'index.html');
     const logOutButton = document.createElement('img');
-    logOutButton.setAttribute('src', '../../img/log-out.png');
+    logOutButton.setAttribute('src', './img/log-out.png');
     logOutButton.setAttribute('class', 'js--logoutButton')
     logOutRedirection.appendChild(logOutButton);
     logOut.appendChild(logOutRedirection);
