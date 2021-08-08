@@ -5,6 +5,19 @@ export default class Interaction {
     this.userId = userid;
   }
 
+  addRecent(song) {
+    const saveRecent = { 'userId': `${this.userId}`, 'songs': [`${song}`] };
+
+    fetch('https://kaju-music.herokuapp.com/recent', {
+      method: 'PUT',
+      body: JSON.stringify(saveRecent),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json());
+  }
+
   addFavorite(song) {
     const saveFavorite = { 'userId': `${this.userId}`, 'songs': [`${song}`] };
 

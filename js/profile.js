@@ -95,8 +95,11 @@ function buttonMusicList() {
       localStorage['currentSong'] = e.target.dataset.index;
       const musicName = e.target.dataset.name;
       const audio = e.target.dataset.audio;
+      const song = e.target.dataset.id;
+
       musicPlayer.controllers();
       songPlayer.currentSong(audio, musicName);
+      interaction.addRecent(song);
 
       const next = document.querySelector('.nextButton');
       next.addEventListener('click', () => {
@@ -140,10 +143,12 @@ function buttonPlaylist() {
     hearthAnimation(play);
     play.addEventListener('click', (e) => {
       if (e.target.classList.contains('js--listening')) {
-        const audio = e.target.dataset.audio;
         localStorage['currentSong'] = e.target.dataset.index;
+        const audio = e.target.dataset.audio;
+        const song = e.target.dataset.id;
         musicPlayer.controllers();
         songPlayer.currentSong(audio);
+        interaction.addRecent(song);
 
         const next = document.querySelector('.nextButton');
         next.addEventListener('click', () => {

@@ -61,10 +61,12 @@ window.onload = function () {
     if (e.target.classList.contains('js--listening')) {
       const audio = e.target.dataset.audio;
       const musiName = e.target.dataset.name;
+      const song = e.target.dataset.id;
       const musicPlayer = new MusicPlayer();
       musicPlayer.controllers();
       const songPlayer = new SongPlayer();
       songPlayer.currentSong(audio, musiName);
+      interaction.addRecent(song);
     }
     if (e.target.classList.contains('js--like')) {
       const song = e.target.dataset.id;
