@@ -8,7 +8,7 @@ export default class MusicPlayer {
         <audio autoplay class="music" type="audio/mp3" crossOrigin="anonymous"></audio>
         <p class="music__player--title">Playing <span>Music Name</span></p>
         <button class="button__addPlaylist ">
-          <img class="img__cursor addPlaylist" src="./img/add-playlist.png" alt="add-playlist-button">
+          <img class="img__cursor addPlaylist js--addPlaylist" src="./img/add-playlist.png" alt="add-playlist-button">
         </button>
         <button class="button__previousSong ">
           <img class=" img__cursor previousButton" src="./img/left-arrow.png" alt="previous-song-button">

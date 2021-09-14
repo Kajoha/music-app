@@ -34,4 +34,4 @@ function songCreation(audio) {
   songAnimation()
 }
 
-export {songCreation};
+export { songCreation };

@@ -33,11 +33,12 @@ function savedLocalStorage() {
   });
 }
 
+const musicPlayer = new MusicPlayer();
+
 window.onload = function () {
   const playButton = document.querySelector('.js--listening');
   playButton.addEventListener('click', (e) => {
     const audio = e.target.dataset.audio;
-    const musicPlayer = new MusicPlayer();
     musicPlayer.controllers();
     const songPlayer = new SongPlayer();
     songPlayer.currentSong(audio);
@@ -54,3 +55,15 @@ fetch(`https://kaju-music.herokuapp.com/recent?userId=${userId}`).then((response
     LastSongButton.dataset.audio = currentSound;
   });
 });
+
+function addPlaylist() {
+  const clickModal = document.querySelector('.musicPlayer__controls');
+  clickModal.addEventListener('click', (e) => {
+    if (e.target.classList.contains('js--addPlaylist')) {
+      musicPlayer.addingPlaylists();
+      console.log(e)
+    }
+  });
+}
+
+addPlaylist();
